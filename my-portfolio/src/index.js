@@ -4,11 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+// JSX Tag Language
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <> 
+    <h1>Hello React</h1>
+    <p>Lorem ipsum dolor <br /> sit amet consectetur, adipisicing elit. Harum magnam deleniti ad praesentium alias nihil temporibus doloremque eaque consequatur. A harum ipsum blanditiis delectus ad eius ipsa adipisci quam culpa.</p>
+  </>
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
