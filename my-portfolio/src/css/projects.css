@@ -64,8 +64,8 @@
 
 
 .supervision{
-    top: 35px;
-    left: 35px;
+    top: 200px;
+    left: 200px;
     z-index: 0;
     transition: top 0.4s;
 }
@@ -92,8 +92,8 @@
 }
 
 .compiler{
-    top: 70px;
-    left: 70px;
+    top: 400px;
+    left: 400px;
     z-index: 0;
     transition: top 0.4s;
 }

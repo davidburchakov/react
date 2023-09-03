@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import bird from "static/img/bird.png";
 import 'css/projects.css';
-// import "js/projects-card.js";
 
 
 
@@ -13,15 +12,23 @@ const ProjectsSection = () => {
   const [globalMousePos, setGlobalMousePos] = useState({});
   const [localMousePos, setLocalMousePos] = useState({});
   const [birdDimensions, setBirdDimensions] = useState({ width: null, height: null });
+  const [supervisionDimensions, setSupervisionDimensions] = useState({ width: null, height: null });
+  const [compilerDimensions, setCompilerDimensions] = useState({ width: null, height: null });
 
 
   const birdRef = useRef(null);
   let birdHeight = null;
   let birdWidth = null;
+  const supervisionRef = useRef(null);
+  let supervisionHeight = null;
+  let supervisionWidth = null;
+  const compilerRef = useRef(null);
+  let compilerHeight = null;
+  let compilerWidth = null;
   
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event, ref) => {
     // 👇 Get mouse position relative to bird container
-    const localX = event.clientX - birdRef.current.getBoundingClientRect().left;
+    const localX = event.clientX - ref.current.getBoundingClientRect().left;
     const localY = event.clientY - birdRef.current.getBoundingClientRect().top;
   
     setLocalMousePos({ x: localX, y: localY });
@@ -32,17 +39,24 @@ const ProjectsSection = () => {
     birdHeight = birdRef.current.clientHeight;
     birdWidth = birdRef.current.clientWidth;
     setBirdDimensions({ width: birdWidth, height: birdHeight });
-    console.log(birdHeight)
-    console.log(birdWidth)
+    
+    supervisionRef.current = document.getElementById("supervision");
+    supervisionHeight = supervisionRef.current.clientHeight;
+    supervisionWidth = supervisionRef.current.clientWidth;
+    setSupervisionDimensions({ width: supervisionWidth, height: supervisionHeight });
 
-    const handleMouseMove = (event) => {
+    compilerRef.current = document.getElementById("compiler");
+    compilerHeight = compilerRef.current.clientHeight;
+    compilerWidth = compilerRef.current.clientWidth;
+    setCompilerDimensions({ width: compilerWidth, height: compilerHeight });
+
+    const handleMouseMove = (event, birdRef) => {
       setGlobalMousePos({
         x: event.clientX,
         y: event.clientY,
       });
 
-      // birdRef.current.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
-      console.log(localMousePos)
+      // console.log(localMousePos)
 
     };
 
@@ -72,7 +86,7 @@ const ProjectsSection = () => {
               id="bird"
               onMouseEnter={() => BirdSetIsShown(true)}
               onMouseLeave={() => BirdSetIsShown(false)}
-              onMouseMove={handleMouseMove}
+              onMouseMove={(event) => handleMouseMove(event, birdRef)}
               >
           
           <div  className="projects-card"
@@ -99,19 +113,27 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        {/* <div  className="projects-container supervision"
-              id='supervision'
+        <div  className="projects-container supervision " 
+              id="supervision"
               onMouseEnter={() => SupervisionSetIsShown(true)}
               onMouseLeave={() => SupervisionSetIsShown(false)}
-
-                      >
-          <div className="projects-card">
-            <div className="img-card">
+              onMouseMove={(event) => handleMouseMove(event, supervisionRef)}
+              >
+          
+          <div  className="projects-card"
+                style={{
+                  transform: SupervisionIsShown
+                    ? `rotateX(${((supervisionDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((supervisionDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                    : 'none',
+                  transition: 'none'
+                }}
+                >
+            <div className="img-card">            
               <div className="circle"></div>
-              <img id="img-self-supervision" src={ bird } alt="bird" />
+              <img id="img-self-bird" src={ bird } alt="bird" />
             </div>
             <div className="info">
-              <h1 className="title-card">Supervision Learning</h1>
+              <h1 className="title-card">Computer Graphics</h1>
               <h3>
                 Computer Graphics projects using WebCGF (Web Computer Graphics @ FEUP) - a library based on WebGL developed by teachers and alumni of GIG, DEI at the Faculty of Engineering of the University of Porto to support the computer graphics courses lectured primarily in the Master in Informatics and Computing Engineering (MIEIC).
               </h3>
@@ -122,20 +144,27 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        <div  className="projects-container compiler"
-              id='compiler'
+        <div  className="projects-container compiler " 
+              id="compiler"
               onMouseEnter={() => CompilerSetIsShown(true)}
               onMouseLeave={() => CompilerSetIsShown(false)}
-              onMouseMove={handleMouseMove}
-
-          >
-          <div className="projects-card">
-            <div className="img-card">
+              onMouseMove={(event) => handleMouseMove(event, compilerRef)}
+              >
+          
+          <div  className="projects-card"
+                style={{
+                  transform: CompilerIsShown
+                    ? `rotateX(${((compilerDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((compilerDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                    : 'none',
+                  transition: 'none'
+                }}
+                >
+            <div className="img-card">            
               <div className="circle"></div>
-              <img id="img-self-compiler" src={ bird } alt="bird" />
+              <img id="img-self-bird" src={ bird } alt="bird" />
             </div>
             <div className="info">
-              <h1>Java-- Compiler</h1>
+              <h1 className="title-card">Computer Graphics</h1>
               <h3>
                 Computer Graphics projects using WebCGF (Web Computer Graphics @ FEUP) - a library based on WebGL developed by teachers and alumni of GIG, DEI at the Faculty of Engineering of the University of Porto to support the computer graphics courses lectured primarily in the Master in Informatics and Computing Engineering (MIEIC).
               </h3>
@@ -144,7 +173,9 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
+
+
       </div>
     </section>
   );
