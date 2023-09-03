@@ -1,8 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import bird from "static/img/bird.png";
 import 'css/projects.css';
+// import 'js/gsap-scroll.js';
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { CSSPlugin } from "gsap/CSSPlugin";
 
-
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin,CSSPlugin);
 
 const ProjectsSection = () => {
   const [BirdIsShown, BirdSetIsShown] = useState(false);
@@ -16,6 +21,8 @@ const ProjectsSection = () => {
   const [compilerDimensions, setCompilerDimensions] = useState({ width: null, height: null });
 
 
+  const pileRef = useRef(null);
+
   const birdRef = useRef(null);
   let birdHeight = null;
   let birdWidth = null;
@@ -25,6 +32,7 @@ const ProjectsSection = () => {
   const compilerRef = useRef(null);
   let compilerHeight = null;
   let compilerWidth = null;
+
   
   const handleMouseMove = (event, ref) => {
     // 👇 Get mouse position relative to bird container
@@ -33,6 +41,17 @@ const ProjectsSection = () => {
   
     setLocalMousePos({ x: localX, y: localY });
   };
+
+
+  // const tlProjects = gsap.timeline({
+  //   repeat: 0,
+  //   defaults: { duration: 1, ease: Power3.easeInOut },
+  // });
+
+
+  
+
+
 
   useEffect(() => {
     birdRef.current = document.getElementById("bird");
@@ -50,11 +69,36 @@ const ProjectsSection = () => {
     compilerWidth = compilerRef.current.clientWidth;
     setCompilerDimensions({ width: compilerWidth, height: compilerHeight });
 
+    console.log(birdRef)
+    console.log(supervisionRef)
+    console.log(compilerRef)
+
+
+    gsap.to("#bird", {
+      scrollTrigger: {
+        trigger: "#bird",
+        start: "top top",
+        end: "center 100px",
+        scrub: 1,
+        markers: true,
+        pin: true,
+      },
+      x: 400,
+      rotation: 360,
+    });
+
+
+
+
+
+
+
     const handleMouseMove = (event, birdRef) => {
       setGlobalMousePos({
         x: event.clientX,
         y: event.clientY,
       });
+
 
       // console.log(localMousePos)
 
@@ -80,13 +124,14 @@ const ProjectsSection = () => {
     <section className="section projects">
       <h1>Projects</h1>
 
-      <div className="pile">
+      <div className="pile" ref={pileRef}>
 
         <div  className="projects-container bird " 
               id="bird"
               onMouseEnter={() => BirdSetIsShown(true)}
               onMouseLeave={() => BirdSetIsShown(false)}
               onMouseMove={(event) => handleMouseMove(event, birdRef)}
+
               >
           
           <div  className="projects-card"
