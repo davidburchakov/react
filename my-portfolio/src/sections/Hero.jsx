@@ -1,4 +1,5 @@
 import 'css/hero.css';
+import 'css/scroll-button.css';
 import reading from 'static/img/reading-book.png';
 
 export default function Hero() {

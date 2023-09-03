@@ -1,6 +1,8 @@
 import React from 'react';
 import bird from "static/img/bird.png";
 import 'css/projects.css';
+import "js/projects-card.js";
+
 
 const ProjectsSection = () => {
   return (
