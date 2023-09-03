@@ -1,0 +1,154 @@
+.projects{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    min-height: 500vh;
+    font-size: small;
+    color: black;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    z-index: 1;
+}
+
+
+.pile{
+    /* height: 70vh; */
+    width: 90%;
+    /* margin-top: 20rem; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-container{
+    /* width: 50%; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    /* margin: 5rem; */
+}
+
+.bird{
+    top: 0px;
+    left: 0px;
+    transition: top 0.4s;
+}
+.bird:hover{
+    top: -40px;
+    transition: top 0.2s ease;
+}
+
+.supervision{
+    top: 35px;
+    left: 35px;
+    z-index: 0;
+    transition: top 0.4s;
+}
+
+.supervision:hover{
+    top: -5px;
+    transition: top 0.2s ease;
+}
+
+.compiler{
+    top: 70px;
+    left: 70px;
+    z-index: 0;
+    transition: top 0.4s;
+}
+
+.compiler:hover{
+    top: 30px;
+    transition: top 0.2s ease;
+}
+
+.projects-card{
+    /* min-height: 80vh; */
+    /* position: absolute;
+    right: 100%; */
+    transform-style: preserve-3d;
+    height: 40rem;
+    width: 23rem;
+    border-radius: 30px;
+    padding: 0 2rem;
+    /* transform: translateZ(2rem); */
+    background-color: #0e0f11;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2);
+}
+
+.img-card{
+    min-height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.img-card img{
+    width: 20rem;
+    z-index: 2;
+    transition: all 2s ease;
+    
+}
+
+.circle{
+    width: 10rem;
+    height: 10rem;
+    background: linear-gradient(
+        to right,
+        rgba(146, 206, 226, 0.75),
+        rgba(88, 114, 178, 0.75),
+        rgba(112, 83, 122, 0.75)
+    );
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    z-index: 1;
+    /* transform: translateZ(100px); */
+    transition: all 0.5s ease;
+}
+
+.info{
+    transition: all 0.5s ease;
+}
+
+.info h1{
+    font-size: 1.5rem;
+    padding: 0rem 0rem;
+    margin: 0;
+    color: #6aa5ee;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.info h3{
+    font-size: 1rem;
+    padding: 2rem 0rem;
+    color: #e296ec;
+    font-weight: lighter;
+    text-align: center;
+    line-height: 1.6rem;
+    text-transform: none;
+}
+
+.readmore{
+    margin-top: 0rem; 
+}
+
+.readmore button{
+    width: 100%;
+    padding: 1rem 0rem;
+    background: #7784AC; /* #085796 */
+    border: none;
+    color: #0e0f11;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: bolder;
+}

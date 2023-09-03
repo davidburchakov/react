@@ -1,8 +1,9 @@
-
+import 'css/contact.css';
 
 export default function More(){
     return(
-        <section className="more-section" id="moreSection">
+        <section className="section ">
+            
         </section>
     );
 }

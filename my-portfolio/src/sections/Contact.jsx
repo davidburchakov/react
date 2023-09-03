@@ -1,8 +1,9 @@
-
+import 'css/contact.css';
 
 export default function Contact(){
     return(
-        <section className="contact-section" id="contactSection">
+        <section class="section" id="contacts">
+            <h1 class="">Contact Me</h1>
         </section>
     );
 }
