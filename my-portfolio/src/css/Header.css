@@ -1,0 +1,23 @@
+nav {
+    color: white;
+    position: relative;
+    padding: 4rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin-left: 0rem;
+  }
+  
+  nav ul{
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+  }
