@@ -18,11 +18,12 @@ const ProjectsSection = () => {
   const birdRef = useRef(null);
   let birdHeight = null;
   let birdWidth = null;
+  
   const handleMouseMove = (event) => {
-    // 👇 Get mouse position relative to element
-    const localX = event.clientX - event.target.offsetLeft;
-    const localY = event.clientY - event.target.offsetTop;
-
+    // 👇 Get mouse position relative to bird container
+    const localX = event.clientX - birdRef.current.getBoundingClientRect().left;
+    const localY = event.clientY - birdRef.current.getBoundingClientRect().top;
+  
     setLocalMousePos({ x: localX, y: localY });
   };
 
@@ -39,8 +40,6 @@ const ProjectsSection = () => {
         x: event.clientX,
         y: event.clientY,
       });
-      const xAxis = (localMousePos.x / 20);
-      const yAxis = ( localMousePos.y / 20);
 
       // birdRef.current.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
       console.log(localMousePos)
@@ -68,7 +67,7 @@ const ProjectsSection = () => {
       <h1>Projects</h1>
 
       <div className="pile">
-        <p>width: {birdWidth}</p>
+
         <div  className="projects-container bird " 
               id="bird"
               onMouseEnter={() => BirdSetIsShown(true)}
@@ -76,13 +75,15 @@ const ProjectsSection = () => {
               onMouseMove={handleMouseMove}
               >
           
-          <div className="projects-card"
-          style={{
-            transform: `rotateX(${((birdDimensions.height /2) - localMousePos.y) / 20}deg) rotateY(${((birdDimensions.width/2)- localMousePos.x) / 30}deg)`,
-            transition:'none'
-          }}>
-            <div className="img-card">
-            
+          <div  className="projects-card"
+                style={{
+                  transform: BirdIsShown
+                    ? `rotateX(${((birdDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((birdDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                    : 'none',
+                  transition: 'none'
+                }}
+                >
+            <div className="img-card">            
               <div className="circle"></div>
               <img id="img-self-bird" src={ bird } alt="bird" />
             </div>
