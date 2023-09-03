@@ -14,7 +14,7 @@ const ProjectsSection = () => {
           <div className="projects-card">
             <div className="img-card">
               <div className="circle"></div>
-              <img src={ bird } alt="bird" />
+              <img id="img-self-bird" src={ bird } alt="bird" />
             </div>
             <div className="info">
               <h1 className="title-card">Computer Graphics</h1>
@@ -32,7 +32,7 @@ const ProjectsSection = () => {
           <div className="projects-card">
             <div className="img-card">
               <div className="circle"></div>
-              <img src={ bird } alt="bird" />
+              <img id="img-self-supervision" src={ bird } alt="bird" />
             </div>
             <div className="info">
               <h1 className="title-card">Supervision Learning</h1>
@@ -50,10 +50,10 @@ const ProjectsSection = () => {
           <div className="projects-card">
             <div className="img-card">
               <div className="circle"></div>
-              <img src={ bird } alt="bird" />
+              <img id="img-self-compiler" src={ bird } alt="bird" />
             </div>
             <div className="info">
-              <h1 className="title-card">Java-- Compiler</h1>
+              <h1>Java-- Compiler</h1>
               <h3>
                 Computer Graphics projects using WebCGF (Web Computer Graphics @ FEUP) - a library based on WebGL developed by teachers and alumni of GIG, DEI at the Faculty of Engineering of the University of Porto to support the computer graphics courses lectured primarily in the Master in Informatics and Computing Engineering (MIEIC).
               </h3>
