@@ -17,12 +17,20 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header />
-    <Hero />
-    <About />
-    <Projects />
-    <More />
-    <Contact />
+      <div className="main-container">
+        <canvas className="webgl" id="canvas"></canvas>
+    
+        <div className="dat-gui-container">
+          <div id="gui"></div>
+        </div>
+
+        <Header />
+        <Hero />
+        <About />
+        <Projects />
+        <More />
+        <Contact />
+      </div>
     
     <> 
     </>

@@ -1,31 +1,32 @@
-import {useState} from 'react';
+import 'css/hero.css';
+import reading from 'static/img/reading-book.png';
 
 export default function Hero() {
-    const countState = useState(0);
-    const count = countState[0];
-    const setCount = countState[1];
-    const inject = 'bla-bla-bla';
-    const boolean = true;
-    
-    const buttonClick = () => {
-        setCount(count + 1);
-    }
 
     return (
-        <section className="hero-section" id='heroSection'>
-            <h1>Hero</h1>
-            <div className="hello-container">
-            Hello {inject}
-            <br />
-            Current date: {Date.now()}
-            <br />
-            {`Random number: ${Math.random()}`}
-            <br />
-            {boolean ? 'true' : 'false'}
-            <h1>Hello React</h1>
-            <p>Lorem ipsum dolor <br /> sit amet consectetur, adipisicing elit. Harum magnam deleniti ad praesentium alias nihil temporibus doloremque eaque consequatur. A harum ipsum blanditiis delectus ad eius ipsa adipisci quam culpa.</p>
-            </div>
-            <button className="increment" onClick={ buttonClick }>{count}</button>
-        </section>
+        <section className="section hero">
+        <div className="title-container">
+          <h1 className="title">Hi, I'm David</h1>
+          <p className="subtitle1">I'm a student enthusiast</p>
+          <p className="subtitle2">Web and Software developer</p>
+        </div>
+
+        <div className="avatar-container">
+          <img src={ reading } alt="avatar" />
+        </div>
+        
+        {/* <div class="animated-avatar-container">
+          <img src="static/img/reading-book.png" alt="avatar">
+          <video src="static/videos/splash-ink.mp4" autoplay muted loop></video>
+        </div> */}
+        {/* onClick="window.delayedTransition()" */}
+        <a >
+        <div className="scrollDown">
+          <span></span>
+          <span></span>
+          <span></span>
+          </div>
+        </a>
+      </section>
     );
 }

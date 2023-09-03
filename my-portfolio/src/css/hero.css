@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    overflow-x: hidden;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  }
+  
+  html{
+    background-color: #1B1F24;
+    scroll-behavior: smooth;
+    height: auto;
+    /* overflow-y: hidden; */
+  }
+  
+  .main-container{
+    
+  }
+  
+  .webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 1vh;
+    outline: none;
+    z-index: 1;
+  }
+  
+  .title-container{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -90%);
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .title {
+    color: white;
+    font-size: 3rem;
+  }
+  
+  
+  .dat-gui-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    z-index: 2; /* Place the GUI elements above the canvas */
+  }
+  
+  
+  .section
+  {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      font-family: 'Cabin', sans-serif;
+      color: #ffeded;
+      text-transform: uppercase;
+      font-size: 7vmin;
+      padding-left: 10%;
+      padding-right: 10%;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #ffeded;
+    padding-top: 10px;
+  }
+  
+  /* --------------------- Static Avatar Splash  --------------------- */
+  
+  
+  .avatar-container{
+    position:absolute;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    top: 30%;
+    left: 63%;
+    z-index: 20000;
+  }
+  
+  .avatar-container img{
+    width: 100%;
+    height: 100%;
+    background-repeat: none;
+    -webkit-mask-image: url('../static/img/mask.png'); 
+    mask-image: url('../static/img/mask.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 95%;
+    mask-size: 95%;
+    -webkit-mask-position: 20px -50px;
+    mask-position: 20px -50px;
+    
+    object-fit: cover;
+  }
+  
+  /* --------------------- Animated Avatar Splash  --------------------- */
+  
+  .animated-avatar-container{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 30%;
+    right: 75%;
+    
+    background-color: #1B1F24;
+  }
+  
+  .animated-avatar-container img{
+    background-color: #1B1F24;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .animated-avatar-container video{
+    mix-blend-mode: lighten;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  
+  /* --------------------- About section  --------------------- */
+  
+  .about{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+  }
+  
+  .about-text {
+    z-index: 10000;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    transform: rotate(-2.5deg);
+    /* Legacy vendor prefixes that you probably don't need... */
+    /* Safari */
+    -webkit-transform: rotate(-2.5deg);
+    /* Firefox */
+    -moz-transform: rotate(-2.5deg);
+    /* IE */
+    -ms-transform: rotate(-2.5deg);
+    /* Opera */
+    -o-transform: rotate(-2.5deg);
+  }
+  .about-text p{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    letter-spacing: -.05em;
+    margin-bottom: 8rem;
+    font-size: clamp(20px, 1.5vw, 70px);
+    /* padding: 0 1%; */
+  }
+  
+  .about span{
+    opacity: 0.1;
+  }
+  
+  
+  
+  #canvas {
+    position: fixed;
+    max-height: 100vh;
+  }
