@@ -31,6 +31,7 @@ root.render(
         <Projects />
         <More />
         <Contact />
+
       </div>
     
     <> 
