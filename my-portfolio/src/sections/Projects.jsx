@@ -73,19 +73,32 @@ const ProjectsSection = () => {
     console.log(supervisionRef)
     console.log(compilerRef)
 
-
-    gsap.to("#bird", {
-      scrollTrigger: {
-        trigger: "#bird",
-        start: "top top",
-        end: "center 100px",
-        scrub: 1,
-        markers: true,
-        pin: true,
-      },
-      x: 400,
-      rotation: 360,
+    /**
+     * ScrollTrigger Auto Configurations
+     */
+    ScrollTrigger.config({
+      // default is "resize,visibilitychange,DOMContentLoaded,load" so we can remove "resize" from the list:
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
     });
+
+    ScrollTrigger.config({
+      ignoreMobileResize: true
+    });
+
+    ScrollTrigger.addEventListener('refresh', () => console.log('refreshed !'))
+
+    // gsap.to("#bird", {
+    //   scrollTrigger: {
+    //     trigger: "#bird",
+    //     start: "top top",
+    //     end: "center 100px",
+    //     scrub: 1,
+    //     markers: true,
+    //     pin: true,
+    //   },
+    //   x: 400,
+    //   rotation: 360,
+    // });
 
 
 
