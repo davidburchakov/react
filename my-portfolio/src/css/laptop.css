@@ -1,0 +1,20 @@
+.text3D > div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #00000088;
+    color: white;
+    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 30px;
+    user-select: none;
+}
+
+.htmlScreen iframe{
+    width: 1024px;
+    height: 670px;
+    border: none;
+    border-radius: 20px;
+    background: black;
+}

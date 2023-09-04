@@ -19,3 +19,7 @@ code {
   justify-content: center;
   height: 100vh;
 }
+
+canvas{
+  touch-action: none;
+}

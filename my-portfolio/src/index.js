@@ -1,16 +1,16 @@
 // index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import 'css/index.css';
 // import App from './App';
 import Header from './components/Header.jsx';
 import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
 import Projects from './sections/Projects.jsx';
 import More from './sections/More.jsx';
-import Contact from './sections/Contact.jsx';
+import Laptop from './sections/Laptop.jsx';
 import reportWebVitals from './reportWebVitals';
-
+import { Canvas } from '@react-three/fiber';
 
 
 
@@ -19,7 +19,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <div className="main-container">
-        <canvas className="webgl" id="canvas"></canvas>
+        {/* <canvas className="webgl" id="canvas"></canvas> */}
     
         <div className="dat-gui-container">
           <div id="gui"></div>
@@ -30,7 +30,20 @@ root.render(
         <About />
         <Projects />
         <More />
-        <Contact />
+
+        <section className="section contact">
+            <h1 className="">Contact Me</h1>
+        <Canvas 
+              camera={ {
+                fov: 45,
+                near: 0.1,
+                far: 2000,
+                position: [ -3, 1.5, 4 ]
+              } }
+              dpr={ [1, 2] }>
+          <Laptop />
+        </Canvas>
+        </section>
 
       </div>
     
