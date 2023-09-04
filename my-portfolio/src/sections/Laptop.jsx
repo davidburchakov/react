@@ -2,7 +2,7 @@ import 'css/laptop.css';
 import { useState, useTransition } from 'react'
 import { useControls } from 'leva'
 import { useFrame, extend } from '@react-three/fiber';
-import { Html, OrbitControls, PivotControls, Text, Float } from '@react-three/drei';
+import { Html, PresentationControls, PivotControls, Text, Float } from '@react-three/drei';
 import { useGLTF, Environment } from '@react-three/drei';
 import { useRef } from 'react';
 import * as THREE from 'three';
@@ -10,34 +10,28 @@ import * as THREE from 'three';
 extend({Text});
 export default function Contact(){
     
-    <Env preset="sunset"/>
     const computer = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf')
 
 
     const laptopRef = useRef()
     const groupRef = useRef()
     useFrame((state, delta) => {
-        groupRef.current.rotation.y += delta
+        // groupRef.current.rotation.y += delta
     })
-
-    const customControls = {
-        enableDamping: true,
-        // mouseButtons: {
-        //   LEFT: 1,    // Use 2 for middle mouse button
-        //   MIDDLE: 2,  // Use 1 for left mouse button
-        //   RIGHT: THREE.MOUSE.ROTATE,   // Use 0 for right mouse button
-        // },
-      };
 
 
     return <>
             {/* <color args={ ['#10203d'] } attach="background"/> */}
-            <OrbitControls {...customControls}/>
-
-            <PivotControls>
+            <directionalLight target-position={[0, 0, 0]}></directionalLight>
+            <ambientLight intensity={1}/>
+            <pointLight intensity={5} position={[1, 4, 3]} />
             <group ref={ groupRef }>
 
-                <primitive object={ computer.scene } />
+            <PresentationControls global>
+              <Float rotationIntensity={0.4}>
+                    <primitive position={[0.1, -1, 0.3]} object={ computer.scene } />
+              </Float>
+            </PresentationControls>
 
                 {/* <mesh ref={ laptopRef } scale={3} rotation-y={15}>
                     <boxGeometry/>
@@ -58,7 +52,6 @@ export default function Contact(){
                 >
                 <Text position={[0,2.5,0]}>I Love</Text>
             </Float>
-            </PivotControls>
     </>
 }
 
