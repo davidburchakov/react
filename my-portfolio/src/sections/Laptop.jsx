@@ -2,7 +2,7 @@ import 'css/laptop.css';
 import { useState, useTransition } from 'react'
 import { useControls } from 'leva'
 import { useFrame, extend } from '@react-three/fiber';
-import { Html, PresentationControls, PivotControls, Text, Float } from '@react-three/drei';
+import { Html, PresentationControls, PivotControls, Text, Float, ContactShadows } from '@react-three/drei';
 import { useGLTF, Environment } from '@react-three/drei';
 import { useRef } from 'react';
 import * as THREE from 'three';
@@ -22,16 +22,67 @@ export default function Contact(){
 
     return <>
             {/* <color args={ ['#10203d'] } attach="background"/> */}
-            <directionalLight target-position={[0, 0, 0]}></directionalLight>
+            {/* <directionalLight target-position={[0, 0, 0]}></directionalLight> */}
             <ambientLight intensity={1}/>
-            <pointLight intensity={5} position={[1, 4, 3]} />
+            {/* <pointLight intensity={5} position={[1, 4, 3]} /> */}
             <group ref={ groupRef }>
 
-            <PresentationControls global>
+            <PresentationControls global
+              rotation={[0.13, 0.1, 0]}
+              polar={[-0.4, 0.2]}
+              azimuth={[-0.5, 0.5]}
+              config={ {mass: 2, tension: 400} }
+              span={{ mass: 4, tension: 400}}>
               <Float rotationIntensity={0.4}>
-                    <primitive position={[0.1, -1, 0.3]} object={ computer.scene } />
+                <rectAreaLight
+                    width={ 2.5 }
+                    height={ 1.65 }
+                    intensity={ 65 }
+                    color={ '#ff6900'}
+                    rotation={[0.1, Math.PI, 0]}
+                    position={[0, 0.55, -1.15]}
+                  />
+                    <primitive position={[0.1, -1, 0.3]} object={ computer.scene } >
+                      <Html 
+                        transform 
+                        wrapperClass='htmlScreen' 
+                        distanceFactor={ 1.17 }
+                        position={[0, 1.56, -1.4]}
+                        rotation-x={ -0.256 }
+                        >
+                        <iframe src="https://davidburchakov.github.io/" frameborder="0"/>
+                      </Html>
+                    </primitive>
+
               </Float>
+
+
+
+
+
+              <Float
+                speed={0.5}
+                floatIntensity={ 1 }
+                >
+              <Text 
+                      // font="./bangers.woff"
+                      fontSize={0.5}
+                      position={[2.5, 0.75, 1]}
+                      rotation-y={-1.25}
+                      maxWidth={2}
+                      textAlign='center'
+                    >David Burchakov</Text>
+              </Float>
+
+
+
             </PresentationControls>
+
+            <ContactShadows
+                position-y={ -1.4 }
+                opacity={ 0.4 }
+                scale={ 5 }
+                blur={ 2.4 } />
 
                 {/* <mesh ref={ laptopRef } scale={3} rotation-y={15}>
                     <boxGeometry/>
@@ -46,12 +97,7 @@ export default function Contact(){
                 </mesh> */}
 
             </group>
-            <Float
-                speed={5}
-                floatIntensity={ 2 }
-                >
-                <Text position={[0,2.5,0]}>I Love</Text>
-            </Float>
+
     </>
 }
 
