@@ -11,11 +11,17 @@ import More from './sections/More.jsx';
 import Laptop from './sections/Laptop.jsx';
 import reportWebVitals from './reportWebVitals';
 import { Canvas } from '@react-three/fiber';
-
+import * as THREE from 'three';
 
 
 // JSX Tag Language
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Set a background color when the canvas is created
+const created = ({gl}) => {
+  // gl.setClearColor('#ff0000', 1)
+}
+
 root.render(
   <React.StrictMode>
       <div className="main-container">
@@ -33,14 +39,16 @@ root.render(
 
         <section className="section contact">
             <h1 className="">Contact Me</h1>
-        <Canvas 
-              camera={ {
+        <Canvas
+              dpr={ [1, 2] } 
+              onCreated={ created }
+              camera={{
                 fov: 45,
                 near: 0.1,
                 far: 2000,
                 position: [ -3, 1.5, 4 ]
-              } }
-              dpr={ [1, 2] }>
+              }}
+              >
           <Laptop />
         </Canvas>
         </section>

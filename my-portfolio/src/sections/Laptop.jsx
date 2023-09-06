@@ -1,11 +1,9 @@
 import 'css/laptop.css';
-import { useState, useTransition } from 'react'
-import { useControls } from 'leva'
 import { useFrame, extend } from '@react-three/fiber';
-import { Html, PresentationControls, PivotControls, Text, Float, ContactShadows } from '@react-three/drei';
+import { Html, PresentationControls, Text, Float } from '@react-three/drei';
+import { Environment, Sky, ContactShadows, RandomizedLight, AccumulativeShadows, softShadows } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 import { useRef } from 'react';
-import * as THREE from 'three';
 
 extend({Text});
 export default function Contact(){
@@ -22,7 +20,8 @@ export default function Contact(){
 
 
     return <>
-            {/* <color args={ ['#10203d'] } attach="background"/> */}
+            {/* Change color of the parent div */}
+            <color args={ ['#282c34'] } attach="background"/>
             {/* <directionalLight target-position={[0, 0, 0]}></directionalLight> */}
             {/* <pointLight intensity={5} position={[1, 4, 3]} /> */}
             <ambientLight intensity={1}/>

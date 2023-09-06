@@ -11,6 +11,7 @@
   
   html{
     background-color: #1B1F24;
+    /* background-color: #282c34; */
     scroll-behavior: smooth;
     height: auto;
     /* overflow-y: hidden; */
