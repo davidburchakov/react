@@ -22,9 +22,16 @@ export default function Contact(){
     return <>
             {/* Change color of the parent div */}
             <color args={ ['#282c34'] } attach="background"/>
+
+            
+            {/* Predefined Preset Environment */}
+            {/* <Environment preset='sunset'/> */}
+
+            {/* Global Lights */}
+            <ambientLight intensity={1}/>
             {/* <directionalLight target-position={[0, 0, 0]}></directionalLight> */}
             {/* <pointLight intensity={5} position={[1, 4, 3]} /> */}
-            <ambientLight intensity={1}/>
+            
             <group ref={ groupRef }>
 
             <PresentationControls
@@ -36,6 +43,7 @@ export default function Contact(){
               span={{ mass: 4, tension: 400}}>
 
               <Float rotationIntensity={0.4}>
+                {/* Local Light */}
                 <rectAreaLight
                     width={ 2.5 }
                     height={ 1.65 }
@@ -46,6 +54,7 @@ export default function Contact(){
                   />
                   {/* Laptop Primitive */}
                   <primitive position={[0.1, -1, 0.3]} object={ computer.scene } >
+                    {/* iframe */}
                     <Html 
                       transform 
                       wrapperClass='htmlScreen' 
