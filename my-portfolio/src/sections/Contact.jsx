@@ -1,7 +1,8 @@
 import 'css/laptop.css';
 import { useFrame, extend } from '@react-three/fiber';
-import { PresentationControls, Text, Float } from '@react-three/drei';
+import { Html, PresentationControls, Text, Float } from '@react-three/drei';
 import { Environment, Sky, ContactShadows, RandomizedLight, AccumulativeShadows, softShadows } from '@react-three/drei';
+import { OrbitControls, PivotControls } from '@react-three/drei'
 
 import { Suspense, useRef } from 'react';
 import Laptop from 'components/Laptop.jsx'
@@ -20,7 +21,6 @@ export default function Contact(){
 
 
     return <>
-
             {/* Change color of the parent div */}
             <color args={ ['#282c34'] } attach="background"/>
 
@@ -31,15 +31,17 @@ export default function Contact(){
             {/* Global Lights */}
             <ambientLight intensity={1}/>
             {/* <directionalLight target-position={[0, 0, 0]}></directionalLight> */}
-            {/* <pointLight intensity={5} position={[1, 4, 3]} /> */}
+            {/* <pointLight intensity={5} position={[1, 1, 1]} /> */}
             
             <group ref={ groupRef }>
+
+            {/* <OrbitControls/> */}
 
             <PresentationControls
               global            
               rotation={[0.13, 0.1, 0]}
               polar={[-0.4, 0.2]}
-              azimuth={[-0.5, 0.5]}
+              azimuth={[-.5, .2]}
               config={ {mass: 2, tension: 400} }
               span={{ mass: 4, tension: 400}}>
 
@@ -54,8 +56,12 @@ export default function Contact(){
                     position={[0, 0.55, -1.15]}
                   />
                   {/* Laptop Primitive */}
-                  <Suspense fallback={null}>
+                  <Suspense fallback={<Loading />}>
+                  
                     <Laptop/>
+                    {/* <PivotControls> */}
+                    
+                  {/* </PivotControls> */}
                   </Suspense>
               </Float>
 
@@ -91,5 +97,8 @@ export default function Contact(){
 
 }
 
+function Loading() {
+  return <Text>Loading...</Text>;
+}
 // Load the model right away, even if it's not in the scene yet
 // useGLTF.preload(process.env.PUBLIC_URL + '/mac-compressed.glb');

@@ -40,7 +40,7 @@ root.render(
         <section className="section contact">
             <h1 className="">Contact Me</h1>
         <Canvas
-              dpr={ [0.08,0.09] } 
+              dpr={ [0.1,1] } 
               onCreated={ created }
               camera={{
                 fov: 45,
