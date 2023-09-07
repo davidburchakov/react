@@ -24,13 +24,6 @@ const created = ({gl}) => {
 
 root.render(
   <React.StrictMode>
-      <div className="main-container">
-        {/* <canvas className="webgl" id="canvas"></canvas> */}
-    
-        <div className="dat-gui-container">
-          <div id="gui"></div>
-        </div>
-
         <Header />
         <Hero />
         <About />
@@ -40,7 +33,7 @@ root.render(
         <section className="section contact">
             <h1 className="">Contact Me</h1>
         <Canvas
-              dpr={ [0.1,1] } 
+              dpr={ [0.1,0.6] } 
               onCreated={ created }
               camera={{
                 fov: 45,
@@ -52,11 +45,6 @@ root.render(
           <Contact />
         </Canvas>
         </section>
-
-      </div>
-    
-    <> 
-    </>
   
   </React.StrictMode>
 

@@ -5,8 +5,9 @@
   
   html,
   body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    /* width:100vw; */
   }
   
   html{
@@ -14,6 +15,7 @@
     /* background-color: #282c34; */
     scroll-behavior: smooth;
     height: auto;
+    width: 100vw;
     /* overflow-y: hidden; */
   }
   
@@ -60,15 +62,20 @@
       flex-direction: column;
       align-items: center;
       height: 100vh;
+      /* overflow-x: hidden; */
       position: relative;
       font-family: 'Cabin', sans-serif;
       color: #ffeded;
       text-transform: uppercase;
-      font-size: 7vmin;
-      width: 100%;
+      /* font-size: 7vmin; */
+      /* width: 100%; */
       /* height: 100%; */
       /* padding-left: 10%; */
       /* padding-right: 10%; */
+  }
+
+  .hero{
+    overflow-x: hidden;
   }
   
   .hero p {
