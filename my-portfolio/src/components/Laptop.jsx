@@ -9,8 +9,7 @@ export default function Laptop(){
             // console.log(computer);
             const { nodes, materials } = useGLTF(process.env.PUBLIC_URL + '/mac-compressed.glb');
 
-        return null;
-        <group position={[0.1, -0.7, 0.3]} scale={1.2}>
+        return <group position={[0.1, -0.7, 0.3]} scale={1.2}>
             <Html 
                         transform 
                         wrapperClass='htmlScreen' 

@@ -5,15 +5,15 @@
   
   html,
   body {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   }
   
   html{
     background-color: #1B1F24;
     /* background-color: #282c34; */
-    scroll-behavior: smooth;
-    height: auto;
+    /* scroll-behavior: smooth; */
+    /* height: auto; */
     /* overflow-y: hidden; */
   }
   

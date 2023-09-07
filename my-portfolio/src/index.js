@@ -24,13 +24,6 @@ const created = ({gl}) => {
 
 root.render(
   <React.StrictMode>
-      <div className="main-container">
-        {/* <canvas className="webgl" id="canvas"></canvas> */}
-    
-        <div className="dat-gui-container">
-          <div id="gui"></div>
-        </div>
-
         <Header />
         <Hero />
         <About />
@@ -52,11 +45,6 @@ root.render(
           <Contact />
         </Canvas>
         </section>
-
-      </div>
-    
-    <> 
-    </>
   
   </React.StrictMode>
 
