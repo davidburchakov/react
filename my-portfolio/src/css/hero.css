@@ -182,7 +182,9 @@
   
   
   
-  #canvas {
-    position: fixed;
+  #root {
+    /* position: fixed; */
     max-height: 100vh;
+    max-width: 100vw;
+
   }
