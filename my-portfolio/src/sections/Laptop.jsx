@@ -4,11 +4,14 @@ import { Html, PresentationControls, Text, Float } from '@react-three/drei';
 import { Environment, Sky, ContactShadows, RandomizedLight, AccumulativeShadows, softShadows } from '@react-three/drei';
 import { useGLTF } from '@react-three/drei';
 import { useRef } from 'react';
+// import { laptop } from 'static/models/pen.glb';
 
 extend({Text});
 export default function Contact(){
     
-    const computer = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf')
+    const computer = useGLTF(process.env.PUBLIC_URL + '/MyCustomBook-Dostoyevsky.glb');
+    console.log(computer);
+    // const computer = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf')
 
 
     const laptopRef = useRef()
@@ -25,7 +28,7 @@ export default function Contact(){
 
             
             {/* Predefined Preset Environment */}
-            {/* <Environment preset='sunset'/> */}
+            {/* <Environment background preset='apartment'/> */}
 
             {/* Global Lights */}
             <ambientLight intensity={1}/>
@@ -34,27 +37,27 @@ export default function Contact(){
             
             <group ref={ groupRef }>
 
-            <PresentationControls
+            {/* <PresentationControls
               global            
               rotation={[0.13, 0.1, 0]}
               polar={[-0.4, 0.2]}
               azimuth={[-0.5, 0.5]}
               config={ {mass: 2, tension: 400} }
-              span={{ mass: 4, tension: 400}}>
+              span={{ mass: 4, tension: 400}}> */}
 
-              <Float rotationIntensity={0.4}>
+              {/* <Float rotationIntensity={0.4}> */}
                 {/* Local Light */}
-                <rectAreaLight
+                {/* <rectAreaLight
                     width={ 2.5 }
                     height={ 1.65 }
                     intensity={ 30 }
                     color={ '#ff6900'}
                     rotation={[0.1, Math.PI, 0]}
                     position={[0, 0.55, -1.15]}
-                  />
+                  /> */}
                   {/* Laptop Primitive */}
-                  <primitive position={[0.1, -1, 0.3]} object={ computer.scene } >
-                    {/* iframe */}
+                  {/* <primitive position={[0.1, -1, 0.3]} object={ computer.scene } >
+                    iframe
                     <Html 
                       transform 
                       wrapperClass='htmlScreen' 
@@ -64,11 +67,11 @@ export default function Contact(){
                       >
                       <iframe src="https://davidburchakov.github.io/" frameborder="0"/>
                     </Html>
-                  </primitive>
-              </Float>
+                  </primitive> */}
+              {/* </Float> */}
 
               {/* Text */}
-              <Float
+              {/* <Float
                 speed={0.5}
                 floatIntensity={ 1 }
                 >
@@ -83,17 +86,18 @@ export default function Contact(){
                         David Burchakov
                 </Text>
               </Float>
-            </PresentationControls>
+            </PresentationControls> */}
 
             {/* Shadow */}
-            <ContactShadows
+            {/* <ContactShadows
                 position-y={ -1.4 }
                 opacity={ 0.4 }
                 scale={ 5 }
                 blur={ 2.4 } 
-            />
+            /> */}
 
             </group>
+            <primitive object={ computer.scene } scale={3}/>
     </>
 }
 
