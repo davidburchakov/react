@@ -5,7 +5,7 @@ export default function More() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    loadVideoOnScroll(".video-container");
+    loadVideoOnScroll(".more");
   }, []);
 
   const loadVideoOnScroll = (container) => {
@@ -24,7 +24,7 @@ export default function More() {
   };
 
   return (
-    <div className="App">
+    <section className="section more">
       <div className="video-container">
         <div className="video-content">
           <video
@@ -35,6 +35,6 @@ export default function More() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
