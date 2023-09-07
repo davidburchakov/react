@@ -71,8 +71,8 @@ export default function Contact(){
                 floatIntensity={ 1 }
                 >
                 <Text 
-                      // font="./bangers.woff"
-                      fontSize={0.5}
+                      font={process.env.PUBLIC_URL +"/bangers.woff"}
+                      fontSize={1}
                       position={[2.5, 0.75, 1]}
                       rotation-y={-1.25}
                       maxWidth={2}
