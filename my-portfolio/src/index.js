@@ -8,7 +8,7 @@ import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
 import Projects from './sections/Projects.jsx';
 import More from './sections/More.jsx';
-import Laptop from './sections/Laptop.jsx';
+import Contact from './sections/Contact.jsx';
 import reportWebVitals from './reportWebVitals';
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -40,7 +40,7 @@ root.render(
         <section className="section contact">
             <h1 className="">Contact Me</h1>
         <Canvas
-              dpr={ [1, 2] } 
+              dpr={ [0.08,0.09] } 
               onCreated={ created }
               camera={{
                 fov: 45,
@@ -49,7 +49,7 @@ root.render(
                 position: [ -3, 1.5, 4 ]
               }}
               >
-          <Laptop />
+          <Contact />
         </Canvas>
         </section>
 

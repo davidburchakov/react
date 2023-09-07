@@ -1,18 +1,14 @@
 import 'css/laptop.css';
 import { useFrame, extend } from '@react-three/fiber';
-import { Html, PresentationControls, Text, Float } from '@react-three/drei';
+import { PresentationControls, Text, Float } from '@react-three/drei';
 import { Environment, Sky, ContactShadows, RandomizedLight, AccumulativeShadows, softShadows } from '@react-three/drei';
-import { useGLTF } from '@react-three/drei';
-import { useRef } from 'react';
-// import { laptop } from 'static/models/pen.glb';
+
+import { Suspense, useRef } from 'react';
+import Laptop from 'components/Laptop.jsx'
 
 extend({Text});
 export default function Contact(){
     
-    // load locally
-    const computer = useGLTF(process.env.PUBLIC_URL + '/mac-compressed.glb');
-    // load remotely
-    // const computer = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf')
 
 
     const laptopRef = useRef()
@@ -24,6 +20,7 @@ export default function Contact(){
 
 
     return <>
+
             {/* Change color of the parent div */}
             <color args={ ['#282c34'] } attach="background"/>
 
@@ -57,18 +54,9 @@ export default function Contact(){
                     position={[0, 0.55, -1.15]}
                   />
                   {/* Laptop Primitive */}
-                  <primitive position={[0.1, -1, 0.3]} object={ computer.scene } >
-                    iframe
-                    <Html 
-                      transform 
-                      wrapperClass='htmlScreen' 
-                      distanceFactor={ 1.17 }
-                      position={[0, 1.56, -1.4]}
-                      rotation-x={ -0.256 }
-                      >
-                      <iframe src="https://davidburchakov.github.io/" frameborder="0"/>
-                    </Html>
-                  </primitive>
+                  <Suspense fallback={null}>
+                    <Laptop/>
+                  </Suspense>
               </Float>
 
               {/* Text */}
@@ -98,6 +86,10 @@ export default function Contact(){
             />
 
             </group>
+
     </>
+
 }
 
+// Load the model right away, even if it's not in the scene yet
+// useGLTF.preload(process.env.PUBLIC_URL + '/mac-compressed.glb');
