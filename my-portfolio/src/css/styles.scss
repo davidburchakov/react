@@ -4,7 +4,7 @@
   }
   
   .video-container {
-    height: 300vh;
+    height: 200vh;
   
     .video-content {
       // height: 100vh;
@@ -13,8 +13,8 @@
       top: 0;
   
       video{
-        height: 100%; 
-        width: 100%;
+        height: 1000px; 
+        width: 1000px;
         object-fit: cover;
       }
   
@@ -30,6 +30,6 @@
   }
   
   .more{
-    min-height: 300vh;
+    min-height: 200vh;
     /* height: 200vh; */
 }
