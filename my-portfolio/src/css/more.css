@@ -4,7 +4,7 @@
 }
 
 .video-container {
-  height: 2000vh;
+  height: 700vh;
 }
 
 .video-container .video-content {
@@ -27,6 +27,6 @@
 }
 
 .more {
-  min-height: 2000vh;
+  min-height: 700vh;
 }
 
