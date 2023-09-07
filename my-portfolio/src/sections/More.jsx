@@ -1,4 +1,5 @@
-import "css/styles.scss";
+// import "css/styles.scss";
+import "css/more.css";
 import React, { useRef, useEffect } from "react";
 
 export default function More() {
@@ -17,8 +18,9 @@ export default function More() {
         const scrollY = window.scrollY - container.offsetTop;
         const scrollPercent = scrollY / sectionHeight;
 
+        const numberOfFrames = 6;
         videoRef.current.currentTime =
-          videoRef.current.duration * scrollPercent ;
+          videoRef.current.duration * scrollPercent * numberOfFrames;
       }
       requestAnimationFrame(videoPlayOnScroll);
     };
@@ -35,7 +37,7 @@ export default function More() {
               preload="auto"
               ref={videoRef}
               src="https://www.apple.com/media/us/mac-pro/2013/16C1b6b5-1d91-4fef-891e-ff2fc1c1bb58/videos/macpro_main_desktop.mp4"
-              // src={process.env.PUBLIC_URL + '/lion2.mp4'}
+              // src={process.env.PUBLIC_URL + '/wingsuit.mp4'}
             />
           </div>
         </div>
