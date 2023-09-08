@@ -1,4 +1,32 @@
-.more{
-    min-height: 500vh;
-    /* height: 200vh; */
+.App {
+  font-family: sans-serif;
+  text-align: center;
 }
+
+.video-container {
+  height: 700vh;
+}
+
+.video-container .video-content {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.video-container .video-content video {
+  height: 1000px;
+  width: 1000px;
+  object-fit: cover;
+}
+
+.video-container .video-content .text-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: red;
+}
+
+.more {
+  min-height: 700vh;
+}
+
