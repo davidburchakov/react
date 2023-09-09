@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'css/index.css';
+import 'css/contact.css';
 // import App from './App';
 import Header from './components/Header.jsx';
 import Hero from './sections/Hero.jsx';

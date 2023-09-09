@@ -1,40 +1,50 @@
 import "css/more.css";
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
-export default function More() {
-  const videoRef = useRef(null);
+gsap.registerPlugin(ScrollTrigger);
+
+function More() {
+  const componentRef = useRef(null);
 
   useEffect(() => {
-    loadVideoOnScroll(".more");
+    const ctx = gsap.context(() => {
+      gsap.to(".video-container", {
+        scrollTrigger: {
+          trigger: ".video-container",
+          start: "top top",
+          end: "bottom+=8000px top",
+          markers: true,
+          pin: true,
+          scrub: 0.5,
+          onUpdate: (self) => {
+            const scrollpos = self.progress * 50;
+            let delay = 0;
+            delay += (scrollpos - delay) * 0.2;
+            videoRef.current.currentTime = delay;
+          },
+        },
+      });
+    }, componentRef.current);
+
+    return () => ctx.revert();
   }, []);
 
-  const loadVideoOnScroll = (container) => {
-    container = document.querySelector(container);
-
-    const videoPlayOnScroll = () => {
-      if (videoRef.current.duration) {
-        const scrollPercent =
-          window.scrollY / (container.scrollHeight - window.innerHeight);
-        videoRef.current.currentTime =
-          videoRef.current.duration * scrollPercent/2;
-      }
-      requestAnimationFrame(videoPlayOnScroll);
-    };
-    requestAnimationFrame(videoPlayOnScroll);
-  };
+  const introRef = useRef(null);
+  const textRef = useRef(null);
+  const videoRef = useRef(null);
 
   return (
-    <section className="section more">
-      <div className="video-container">
-        <div className="video-content">
-          <video
-            preload="auto"
-            ref={videoRef}
-            src="https://www.apple.com/media/us/mac-pro/2013/16C1b6b5-1d91-4fef-891e-ff2fc1c1bb58/videos/macpro_main_desktop.mp4"
-            // src={process.env.PUBLIC_URL + '/ed.mp4'}
-          />
+    <div className="App" ref={componentRef}>
+      <section className="section intro" ref={introRef}>
+        <div className="video-container">
+          <h1 ref={textRef}>The New Wingsuit Pro</h1>
+          <video src={process.env.PUBLIC_URL + '/cloudf.mp4'} type="video/mp4" preload="auto" ref={videoRef}></video>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
+
+export default More;

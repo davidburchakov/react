@@ -1,32 +1,42 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
 .video-container {
-  height: 700vh;
+  /* height: 100vh;
+  width: 100vh; */
 }
 
-.video-container .video-content {
+.video-container video {
+  height: 100%;
   width: 100%;
-  position: sticky;
-  top: 0;
-}
-
-.video-container .video-content video {
-  height: 1000px;
-  width: 1000px;
+  padding: 0;
+  margin: 0;
   object-fit: cover;
 }
 
-.video-container .video-content .text-content {
+.video-container h1 {
   position: absolute;
-  top: 0;
-  right: 0;
-  color: red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 75px;
+  color: white;
 }
 
-.more {
-  min-height: 700vh;
+
+section h1 {
+  padding-top: 300px;
+  text-align: center;
+  font-size: 80px;
 }
 
+.intro{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10000px;
+  width: 100%;
+  position: relative;
+  font-family: 'Cabin', sans-serif;
+  color: #ffeded;
+  text-transform: uppercase;
+  z-index: 100;
+}
