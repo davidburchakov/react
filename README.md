@@ -20,21 +20,21 @@ npm run deploy -- -m ""
 
 
 # Notes:
-Some resources and forums that helped me built the website
+_Some resources and forums that helped me built the website_
+<br><br>
 
-
-
-#### How to deploy react project to github-pages
+### How to deploy react project to github-pages
 https://github.com/gitname/react-gh-pages
-
-#### Bruno Simon's Threejs course
+<br><br>
+### Bruno Simon's Threejs course
 you can find his course here: https://hacksnation.com/
+<br><br>
 
+### Video on Scroll
+_Playing video on scroll_
 
-#### scroll-page
-Playing video on scroll
+I'm using gsap ScrollTrigger react version of developedbyed tutorial <sub>(he uses gsap ScrollMagic and TweenMax which are outdated)</sub>
 
-gsap ScrollTrigger react version of developedbyed tutorial
 https://www.youtube.com/watch?v=wLUJ9VNzZXo&t=12s
 
 As __@anormalking__ pointed out in the comments, it is recommended to change the framerate of videos.
@@ -51,5 +51,5 @@ sudo apt install ffmpeg
 ~~~~
 
 
-###### Gsap usage with react - gsap.context:
+#### Gsap usage with react - gsap.context:
 https://greensock.com/forums/topic/34981-pin-section-problem-in-react/
