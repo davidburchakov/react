@@ -3,19 +3,23 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 gsap.registerPlugin(ScrollTrigger);
-
 function More() {
   const componentRef = useRef(null);
   const introRef = useRef(null);
   const textRef = useRef(null);
   const videoRef = useRef(null);
+  const videoContainerRef = useRef(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
-      gsap.to(".video-container", {
+      const animation = gsap.to(videoContainerRef.current, {
         scrollTrigger: {
-          trigger: ".video-container",
+          trigger: videoContainerRef.current,
           start: "top top",
           end: "bottom+=12000px top",
           markers: true,
@@ -40,15 +44,21 @@ function More() {
         end: "bottom-=10000px top",
         scrub: true,
       });
+      return () => {
+        animation.kill();
+        // animation.scrollTrigger.kill();
+      }
     }, componentRef.current);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (
     <div className="App" ref={componentRef}>
       <section className="section intro" ref={introRef}>
-        <div className="video-container">
+        <div className="video-container" ref={videoContainerRef}>
           <h1 ref={textRef}>The New Wingsuit Pro</h1>
           <video src={process.env.PUBLIC_URL + '/cloudf.mp4'} type="video/mp4" preload="auto" ref={videoRef}></video>
         </div>
