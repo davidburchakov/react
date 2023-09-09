@@ -7,6 +7,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 function More() {
   const componentRef = useRef(null);
+  const introRef = useRef(null);
+  const textRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -26,14 +29,21 @@ function More() {
           },
         },
       });
+
+      // Text Animation
+      const textAnim = gsap.fromTo(textRef.current, { opacity: 1 }, { opacity: 0, duration: 3 });
+
+      ScrollTrigger.create({
+        animation: textAnim,
+        trigger: introRef.current,
+        start: "top top",
+        end: "bottom-=10000px top",
+        scrub: true,
+      });
     }, componentRef.current);
 
     return () => ctx.revert();
   }, []);
-
-  const introRef = useRef(null);
-  const textRef = useRef(null);
-  const videoRef = useRef(null);
 
   return (
     <div className="App" ref={componentRef}>
