@@ -1,6 +1,6 @@
 .video-container {
-  /* height: 100vh;
-  width: 100vh; */
+  height: auto;
+  width: auto;
 }
 
 .video-container video {
@@ -32,7 +32,7 @@ section h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 10000px;
+  height: 14000px;
   width: 100%;
   position: relative;
   font-family: 'Cabin', sans-serif;

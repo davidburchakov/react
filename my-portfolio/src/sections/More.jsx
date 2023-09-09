@@ -14,14 +14,14 @@ function More() {
         scrollTrigger: {
           trigger: ".video-container",
           start: "top top",
-          end: "bottom+=8000px top",
+          end: "bottom+=12000px top",
           markers: true,
           pin: true,
-          scrub: 0.5,
+          scrub: 1,
           onUpdate: (self) => {
-            const scrollpos = self.progress * 50;
-            let delay = 0;
-            delay += (scrollpos - delay) * 0.2;
+            const scrollpos = self.progress * 30;
+            let delay = 1;
+            delay += (scrollpos - delay) * .2;
             videoRef.current.currentTime = delay;
           },
         },
