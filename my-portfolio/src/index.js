@@ -2,9 +2,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'css/index.css';
-// import 'css/contact.css';
-// import App from './App';
+import 'css/contact.css';
+import App from './App';
 import Header from './components/Header.jsx';
+import Books from './components/Books.jsx';
 import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
 import Projects from './sections/Projects.jsx';
@@ -13,7 +14,7 @@ import Contact from './sections/Contact.jsx';
 import reportWebVitals from './reportWebVitals';
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
-
+import { BoxGeometry } from 'three';
 
 // JSX Tag Language
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,8 +26,12 @@ const created = ({gl}) => {
 
 root.render(
   <React.StrictMode>
+
+        
         <Header />
         <Hero />
+        
+        
         <About />
         <Projects />
         <More />
