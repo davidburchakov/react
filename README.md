@@ -70,3 +70,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 #### Gsap usage with react - gsap.context:
 https://greensock.com/forums/topic/34981-pin-section-problem-in-react/
+
+### How to use Drei Views 
+https://codesandbox.io/s/bp6tmc?file=/src/App.js
