@@ -9,8 +9,7 @@ export default function Books() {
   const box = useRef(null)
   const box2 = useRef(null)
 
-//   const journalAnimations = useAnimations(journal.animations, journal.scene)
-//   console.log(journalAnimations)
+  
   return (
     <div ref={ref} className="container">
       <div className="text">
