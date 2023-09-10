@@ -14,8 +14,8 @@ export default function Books() {
         <div ref={box} className="view scale" style={{ height: 300 }} />
         <div ref={box2} className="view scale" style={{ height: 300 }} />
       </div>
-      <Canvas eventSource={ref} className="canvas">
         
+      <Canvas eventSource={ref} className="canvas">
         <View track={box}>
         <ambientLight intensity={1} />
         <primitive object={journal.scene} scale={3} rotation={[Math.PI / 2, 0, 0]}/>
