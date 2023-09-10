@@ -6,13 +6,18 @@ export default function Journal() {
     const journalAnimations = useAnimations(journal.animations, journal.scene)
     console.log(journalAnimations.names)
     
-    useEffect(() => {
-        const action = journalAnimations.actions.Animation;
-        action.play();
-    }, [])
 
+    
+
+    const handleClick = () => {
+        const action = journalAnimations.actions.Animation;
+        
+        if (action) {
+          action.reset().play();
+        }
+      };
     return  <primitive object={journal.scene} scale={1} rotation={[Math.PI / 2, 0, 0]}
-    onClick={(e) => {e.stopPropagation(); console.log('Journal clicked')}}
+    onClick={(e) => {e.stopPropagation(); handleClick(); console.log('Journal clicked')}}
     onPointerEnter={(e) => { document.body.style.cursor = 'pointer'; e.stopPropagation()}}
     onPointerLeave={(e) => { document.body.style.cursor = 'default'; e.stopPropagation()}}
     />;
