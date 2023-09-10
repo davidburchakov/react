@@ -51,5 +51,22 @@ sudo apt install ffmpeg
 ~~~~
 
 
+#### Import gsap with cdn in react:
+https://greensock.com/forums/topic/26390-gsap-cdn-in-react/
+
+~~~~
+// in .html file
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+~~~~
+
+~~~~
+// in .jsx file
+const gsap = window.gsap;
+const ScrollTrigger = window.ScrollTrigger;
+gsap.registerPlugin(ScrollTrigger)
+~~~~
+
+
 #### Gsap usage with react - gsap.context:
 https://greensock.com/forums/topic/34981-pin-section-problem-in-react/
