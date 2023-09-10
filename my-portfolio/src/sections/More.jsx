@@ -1,12 +1,15 @@
 import "css/more.css";
 import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+// import { gsap } from 'gsap';
+// import ScrollTrigger from 'gsap/ScrollTrigger';
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-gsap.registerPlugin(ScrollTrigger);
+// if (typeof window !== "undefined") {
+//   gsap.registerPlugin(ScrollTrigger);
+// }
+// gsap.registerPlugin(ScrollTrigger);
+const gsap = window.gsap;
+const ScrollTrigger = window.ScrollTrigger;
+gsap.registerPlugin(ScrollTrigger)
 function More() {
   const componentRef = useRef(null);
   const introRef = useRef(null);
@@ -15,7 +18,6 @@ function More() {
   const videoContainerRef = useRef(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       const animation = gsap.to(videoContainerRef.current, {
         scrollTrigger: {
