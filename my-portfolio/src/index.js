@@ -27,7 +27,7 @@ root.render(
   <React.StrictMode>
         <Header />
         <Hero />
-        {/* <About /> */}
+        <About />
         <Projects />
         <More />
 
