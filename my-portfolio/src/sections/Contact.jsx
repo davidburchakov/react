@@ -2,7 +2,7 @@ import 'css/laptop.css';
 import { useFrame, extend } from '@react-three/fiber';
 import { Html, PresentationControls, Text, Float } from '@react-three/drei';
 import { Environment, Sky, ContactShadows, RandomizedLight, AccumulativeShadows, softShadows } from '@react-three/drei';
-import { OrbitControls, PivotControls } from '@react-three/drei'
+
 
 import { Suspense, useRef } from 'react';
 import Laptop from 'components/Laptop.jsx'

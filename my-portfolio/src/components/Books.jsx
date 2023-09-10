@@ -18,12 +18,15 @@ export default function Books() {
       <Canvas eventSource={ref} className="canvas">
         <View track={box}>
         <ambientLight intensity={1} />
-        <primitive object={journal.scene} scale={3} rotation={[Math.PI / 2, 0, 0]}/>
+        <primitive object={journal.scene} scale={3} rotation={[Math.PI / 2, 0, 0]}
+            onClick={(e) => {e.stopPropagation(); console.log('Journal clicked')}}
+            onPointerEnter={(e) => { document.body.style.cursor = 'pointer'; e.stopPropagation()}}
+            onPointerLeave={(e) => { document.body.style.cursor = 'default'; e.stopPropagation()}}
+        />
           <mesh rotation={[Math.PI/2, Math.PI/2, Math.PI/2]}>
             <boxGeometry />
             <meshStandardMaterial color="red" />
           </mesh>
-          <OrbitControls makeDefault />
         </View>
         <View track={box2}>
             <ambientLight intensity={1} />
@@ -31,7 +34,6 @@ export default function Books() {
                 <boxGeometry />
                 <meshStandardMaterial color="blue" />
             </mesh>
-          <OrbitControls makeDefault />
         </View>
         <Preload all />
       </Canvas>

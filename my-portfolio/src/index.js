@@ -15,7 +15,7 @@ import reportWebVitals from './reportWebVitals';
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
 import { BoxGeometry } from 'three';
-
+import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 // JSX Tag Language
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -39,7 +39,7 @@ root.render(
         <section className="section contact">
             <h1 className="">Contact Me</h1>
         <Canvas
-              dpr={ [0.1,0.6] } 
+              dpr={ [0.1,1] } 
               onCreated={ created }
               camera={{
                 fov: 45,
@@ -48,6 +48,8 @@ root.render(
                 position: [ -3, 1.5, 4 ]
               }}
               >
+          <AdaptiveDpr pixelated />
+          <AdaptiveEvents />
           <Contact />
         </Canvas>
         </section>
