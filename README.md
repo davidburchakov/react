@@ -73,3 +73,6 @@ https://greensock.com/forums/topic/34981-pin-section-problem-in-react/
 
 ### How to use Drei Views 
 https://codesandbox.io/s/bp6tmc?file=/src/App.js
+
+##### Canvases Vs. Views
+https://discourse.threejs.org/t/canvases-vs-views/55858
