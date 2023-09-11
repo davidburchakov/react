@@ -2,9 +2,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'css/index.css';
-// import 'css/contact.css';
-// import App from './App';
+import 'css/contact.css';
+import App from './App';
 import Header from './components/Header.jsx';
+import Books from './components/Books.jsx';
 import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
 import Projects from './sections/Projects.jsx';
@@ -13,8 +14,8 @@ import Contact from './sections/Contact.jsx';
 import reportWebVitals from './reportWebVitals';
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
-
-
+import { BoxGeometry } from 'three';
+import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 // JSX Tag Language
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -25,16 +26,20 @@ const created = ({gl}) => {
 
 root.render(
   <React.StrictMode>
+
+        
         <Header />
         <Hero />
-        {/* <About /> */}
+        
+        
+        <About />
         <Projects />
         <More />
 
         <section className="section contact">
             <h1 className="">Contact Me</h1>
         <Canvas
-              dpr={ [0.1,0.6] } 
+              dpr={ [0.1,1] } 
               onCreated={ created }
               camera={{
                 fov: 45,
@@ -43,6 +48,8 @@ root.render(
                 position: [ -3, 1.5, 4 ]
               }}
               >
+          <AdaptiveDpr pixelated />
+          <AdaptiveEvents />
           <Contact />
         </Canvas>
         </section>

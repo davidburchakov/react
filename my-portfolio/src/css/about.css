@@ -1,0 +1,40 @@
+  /* --------------------- About section  --------------------- */
+  
+  .about{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+  }
+  
+  .about-text {
+    z-index: 100;
+    position: absolute;
+    max-width: 100vh;
+    top: 10%;
+    left: 35%;
+    transform: rotate(-2.5deg);
+    /* Legacy vendor prefixes that you probably don't need... */
+    /* Safari */
+    -webkit-transform: rotate(-2.5deg);
+    /* Firefox */
+    -moz-transform: rotate(-2.5deg);
+    /* IE */
+    -ms-transform: rotate(-2.5deg);
+    /* Opera */
+    -o-transform: rotate(-2.5deg);
+  }
+  .about-text p{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    letter-spacing: -.05em;
+    margin-bottom: 8rem;
+    font-size: clamp(20px, 1.5vw, 70px);
+    /* padding: 0 1%; */
+  }
+  
+  .about span{
+    opacity: 0.1;
+  }
+  

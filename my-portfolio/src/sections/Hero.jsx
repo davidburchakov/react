@@ -1,6 +1,8 @@
 import 'css/hero.css';
 import 'css/scroll-button.css';
 import reading from 'static/img/reading-book.png';
+import Books from 'components/Books';
+import { Suspense } from 'react'
 
 export default function Hero() {
 
@@ -15,7 +17,9 @@ export default function Hero() {
         <div className="avatar-container">
           <img src={ reading } alt="avatar" />
         </div>
-        
+        <Suspense>
+        <Books />
+        </Suspense>
         {/* <div class="animated-avatar-container">
           <img src="static/img/reading-book.png" alt="avatar">
           <video src="static/videos/splash-ink.mp4" autoplay muted loop></video>
