@@ -41,9 +41,9 @@ code {
   height: 100vh;
 }
 
-canvas{
+/* canvas{
   touch-action: none;
-}
+} */
 
 #root {
   /* position: fixed; */

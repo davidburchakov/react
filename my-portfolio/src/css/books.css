@@ -1,9 +1,12 @@
 .canvas {
-    position: fixed !important;
-    top: 0px;
-    left: 0px;
-    width: 100vw !important;
-    height: 100vh !important;
+  position: absolute;
+  top: -80px;
+    /* position: absolute;
+    top: 100px;
+    left: 0px; */
+    /* width: 100vw !important;
+    height: 100vh !important; */
+    z-index: 1000;
   }
 .view {
     margin: 0.2em;

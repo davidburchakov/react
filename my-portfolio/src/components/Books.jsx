@@ -9,45 +9,22 @@ import Nietzsche from 'components/Nietzsche.jsx'
 
 export default function Books() {
   const ref = useRef(null)
-  const book1 = useRef(null)
-  const book2 = useRef(null)
-  const book3 = useRef(null)
-  const book4 = useRef(null)
-
   
   return (
-    <div ref={ref} className="container">
-      <div className="text">
-        <div ref={book1} className="view scale journal"  />
-        <div ref={book2} className="view scale dostoyevsky"  />
-        <div ref={book3} className="view scale tolstoy"  />
-        <div ref={book4} className="view scale nietzsche"  />
-      </div>
+    <div ref={ref} className="books-container">
         
-      <Canvas eventSource={ref} className="canvas">
-        
-        <View track={book1}>
-          <ambientLight intensity={1} />
-          <Journal />
-        </View>
-
-        <View track={book2}>
-            <ambientLight intensity={1} />
-            <Dostoyevsky  />
-        </View>
-
-        <View track={book3}>
-            <ambientLight intensity={1} />
-            <Tolstoy  />
-        </View>
-
-        <View track={book4}>
-            <ambientLight intensity={1} />
-            <Nietzsche  />
-        </View>
-
+      <Canvas eventSource={ref} className="canvas" dpr={[0,1]}
+      style={{ width: '100vw', height: '100vh' }}
+      >
+        <ambientLight intensity={1} />
+        <Journal position={[0,2,0]} scale={.5}/>
+        <Dostoyevsky position={[1,0,0]} scale={.5}/>
+        <Tolstoy  position={[-2,2,0]} scale={.5}/>
+        <Nietzsche  position={[3,2,1]} scale={.5}/>
         <Preload all />
+     
       </Canvas>
+
     </div>
   )
 }
