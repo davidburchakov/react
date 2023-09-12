@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Journal() {
-    const journal = useGLTF(process.env.PUBLIC_URL + '/journal.glb')
+    const journal = useGLTF(process.env.PUBLIC_URL + '/journal-full.glb')
     const journalAnimations = useAnimations(journal.animations, journal.scene)
     console.log(journalAnimations.names)
     

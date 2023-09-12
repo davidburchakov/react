@@ -18,10 +18,10 @@ export default function Books() {
   return (
     <div ref={ref} className="container">
       <div className="text">
-        <div ref={book1} className="view scale" style={{ height: 300 }} />
-        <div ref={book2} className="view scale" style={{ height: 300 }} />
-        <div ref={book3} className="view scale" style={{ height: 300 }} />
-        <div ref={book4} className="view scale" style={{ height: 300 }} />
+        <div ref={book1} className="view scale journal"  />
+        <div ref={book2} className="view scale dostoyevsky"  />
+        <div ref={book3} className="view scale tolstoy"  />
+        <div ref={book4} className="view scale nietzsche"  />
       </div>
         
       <Canvas eventSource={ref} className="canvas">
