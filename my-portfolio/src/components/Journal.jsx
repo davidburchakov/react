@@ -14,11 +14,23 @@ export default function Journal(props) {
           action.reset().play();
         }
       };
-    return  <primitive object={journal.scene} rotation={[Math.PI / 2, 0, 0]}
-    onClick={(e) => {e.stopPropagation(); handleClick(); console.log('Journal clicked')}}
-    onPointerEnter={(e) => { document.body.style.cursor = 'pointer'; e.stopPropagation()}}
-    onPointerLeave={(e) => { document.body.style.cursor = 'default'; e.stopPropagation()}}
-    position={props.position}
-    scale={props.scale}
+
+    return  <primitive object={journal.scene} 
+            rotation={[Math.PI / 2, 0, 0]}
+            position={props.position}
+            scale={props.scale}
+            
+            onClick={(e) => {
+              e.stopPropagation();
+              handleClick(); 
+              console.log('Journal clicked')}}
+
+            onPointerEnter={(e) => { 
+              document.body.style.cursor = 'pointer'; 
+              e.stopPropagation()}}
+
+            onPointerLeave={(e) => { 
+              document.body.style.cursor = 'default'; 
+              e.stopPropagation()}}
     />;
 }
