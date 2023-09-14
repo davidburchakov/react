@@ -1,7 +1,7 @@
 import 'css/laptop.css';
 import { useFrame, extend } from '@react-three/fiber';
-import { Html, PresentationControls, Text, Float } from '@react-three/drei';
-import { Environment, Sky, ContactShadows, RandomizedLight, AccumulativeShadows, softShadows } from '@react-three/drei';
+import { PresentationControls, Text, Float } from '@react-three/drei';
+import { ContactShadows } from '@react-three/drei';
 
 
 import { Suspense, useRef } from 'react';
@@ -100,5 +100,4 @@ export default function Contact(){
 function Loading() {
   return <Text>Loading...</Text>;
 }
-// Load the model right away, even if it's not in the scene yet
 // useGLTF.preload(process.env.PUBLIC_URL + '/mac-compressed.glb');
