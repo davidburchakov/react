@@ -3,6 +3,12 @@ react portfolio
 
 # Set up commands
 
+install npm
+~~~~
+npm install
+~~~~
+
+
 run localhost
 ~~~~
 npm run dev
