@@ -30,23 +30,33 @@ export default function Books() {
           <Common color={"pink"}/>
           <Journal scale={1.2}/>
           <OrbitControls makeDefault/>
+          <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
         <View track={book2}>
-          <ambientLight intensity={1} />
+          <Common color={"red"}/>
           <PivotControls lineWidth={3} depthTest={false} displayValues={false} scale={2}>
-              <Dostoyevsky  scale={1.5}/>
+          <Dostoyevsky  scale={1.5}/>
           </PivotControls>
+          <OrbitControls makeDefault/>
+          <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
         <View track={book3}>
-          <ambientLight intensity={1} />
-          <Tolstoy scale={1.5}/>
+          <Common color={"green"}/>
+          <Tolstoy  scale={1.5}/>
+          <OrbitControls makeDefault/>
+          <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
         <View track={book4}>
-          <ambientLight intensity={1} />
-          <Nietzsche  scale={1.5}/>
+          <Common color={"blue"}/>
+          <mesh>
+            <boxGeometry args={[1, 1, 1]} />
+            <meshBasicMaterial color="purple" />
+          </mesh>
+          <OrbitControls makeDefault/>
+          <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
         <Preload all />
