@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.b504ef2b.css",
-    "main.js": "/react/static/js/main.6f3541fb.js",
+    "main.css": "/react/static/css/main.39c4da6d.css",
+    "main.js": "/react/static/js/main.efb8b2aa.js",
     "static/js/787.128fc6e9.chunk.js": "/react/static/js/787.128fc6e9.chunk.js",
     "static/media/reading-book.png": "/react/static/media/reading-book.c1ae92849b8a67ada8f0.png",
     "static/media/bird.png": "/react/static/media/bird.7c99eb7054b2457c15c8.png",
     "static/media/mask.png": "/react/static/media/mask.7aa10fce0f4b3a73e1a3.png",
     "static/media/logo.svg": "/react/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/react/index.html",
-    "main.b504ef2b.css.map": "/react/static/css/main.b504ef2b.css.map",
-    "main.6f3541fb.js.map": "/react/static/js/main.6f3541fb.js.map",
+    "main.39c4da6d.css.map": "/react/static/css/main.39c4da6d.css.map",
+    "main.efb8b2aa.js.map": "/react/static/js/main.efb8b2aa.js.map",
     "787.128fc6e9.chunk.js.map": "/react/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b504ef2b.css",
-    "static/js/main.6f3541fb.js"
+    "static/css/main.39c4da6d.css",
+    "static/js/main.efb8b2aa.js"
   ]
 }
