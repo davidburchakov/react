@@ -3,11 +3,11 @@ import { useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { View, Preload, OrbitControls, PivotControls, PerspectiveCamera, Environment } from '@react-three/drei'
 import Journal from 'components/Journal.jsx'
-import Dostoyevsky from 'components/Dostoyevsky.jsx'
-import Tolstoy from 'components/Tolstoy.jsx'
-import Nietzsche from 'components/Nietzsche.jsx'
+import Duck from 'components/Duck.jsx'
+import Fox from 'components/Fox.jsx'
+import Penguine from 'components/Penguine.jsx'
 
-export default function Books() {
+export default function Models() {
   const ref = useRef(null)
   const book1 = useRef(null)
   const book2 = useRef(null)
@@ -36,7 +36,7 @@ export default function Books() {
         <View track={book2}>
           <Common color={"red"}/>
           <PivotControls lineWidth={3} depthTest={false} displayValues={false} scale={2}>
-          <Dostoyevsky  scale={1.5}/>
+          <Duck scale={1}/>
           </PivotControls>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
@@ -44,17 +44,14 @@ export default function Books() {
 
         <View track={book3}>
           <Common color={"green"}/>
-          <Tolstoy  scale={1.5}/>
+          <Fox scale={.03} position={[0, 0, -1.5]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
         <View track={book4}>
           <Common color={"blue"}/>
-          <mesh>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshBasicMaterial color="purple" />
-          </mesh>
+          <Penguine scale={.12} position={[0, 0, -1.5]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
