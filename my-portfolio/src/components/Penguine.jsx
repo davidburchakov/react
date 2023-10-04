@@ -13,7 +13,7 @@ export default function Penguine(props) {
       pengRef.current.rotation.y += 0.01; 
       
       // Float the fox model in the X-axis (up and down)
-      pengRef.current.position.y += Math.sin(clock.elapsedTime) * 0.005;
+      pengRef.current.position.y += Math.sin(clock.elapsedTime) * 0.002;
     });
     return  <primitive ref={pengRef} object={journal.scene}
     scale={props.scale}
