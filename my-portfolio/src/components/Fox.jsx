@@ -5,8 +5,9 @@ export default function Fox(props) {
 
   const journal = useGLTF(process.env.PUBLIC_URL + '/Fox.glb')
     
-    return  <primitive object={journal.scene} rotation={[Math.PI / 2, 0, 0]}
+    return  <primitive object={journal.scene}
     position={props.position}
     scale={props.scale}
+    rotation={props.rotation}
     />;
 }
