@@ -1,7 +1,7 @@
 import 'css/hero.css';
 import 'css/scroll-button.css';
 import reading from 'static/img/reading-book.png';
-import Books from 'components/Models';
+import Models from 'components/Models.jsx';
 import { Suspense } from 'react'
 
 export default function Hero() {
@@ -18,7 +18,7 @@ export default function Hero() {
           <img src={ reading } alt="avatar" />
         </div>
         <Suspense>
-        <Books />
+        <Models />
         </Suspense>
         {/* <div class="animated-avatar-container">
           <img src="static/img/reading-book.png" alt="avatar">
