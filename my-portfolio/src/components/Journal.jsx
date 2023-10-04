@@ -16,9 +16,10 @@ export default function Journal(props) {
       };
 
     return  <primitive object={journal.scene} 
-            rotation={[Math.PI / 2, 0, 0]}
-            position={props.position}
             scale={props.scale}
+            rotation={props.rotation}
+            position={props.position}
+
             
             onClick={(e) => {
               e.stopPropagation();

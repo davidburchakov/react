@@ -1,7 +1,7 @@
 import 'css/hero.css';
 import 'css/scroll-button.css';
 import reading from 'static/img/reading-book.png';
-import Books from 'components/Books';
+import Books from 'components/Models';
 import { Suspense } from 'react'
 
 export default function Hero() {
