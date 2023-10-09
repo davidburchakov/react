@@ -3,6 +3,7 @@ import birdPic from "static/img/bird.png";
 import supervisionPic from "static/img/supervision.png";
 import compilerPic from "static/img/compiler.png";
 import lbawPic from "static/img/lbaw.png";
+import r3fPic from "static/img/r3f.png";
 import 'css/projects.css';
 // import 'js/gsap-scroll.js';
 import { gsap, Power3 } from "gsap";
@@ -17,6 +18,7 @@ const ProjectsSection = () => {
   const [SupervisionIsShown, SupervisionSetIsShown] = useState(false);
   const [CompilerIsShown, CompilerSetIsShown] = useState(false);
   const [LbawIsShown, LbawSetIsShown] = useState(false);
+  const [LtwIsShown, LtwSetIsShown] = useState(false);
 
   const [globalMousePos, setGlobalMousePos] = useState({});
   const [localMousePos, setLocalMousePos] = useState({});
@@ -24,6 +26,7 @@ const ProjectsSection = () => {
   const [supervisionDimensions, setSupervisionDimensions] = useState({ width: null, height: null });
   const [compilerDimensions, setCompilerDimensions] = useState({ width: null, height: null });
   const [lbawDimensions, setLbawDimensions] = useState({ width: null, height: null });
+  const [ltwDimensions, setLtwDimensions] = useState({ width: null, height: null });
 
   const pileRef = useRef(null);
 
@@ -39,6 +42,9 @@ const ProjectsSection = () => {
   const lbawRef = useRef(null);
   let lbawHeight = null;
   let lbawWidth = null;
+  const ltwRef = useRef(null);
+  let ltwHeight = null;
+  let ltwWidth = null;
 
   
   const handleMouseMove = (event, ref) => {
@@ -80,6 +86,11 @@ const ProjectsSection = () => {
     lbawHeight = lbawRef.current.clientHeight;
     lbawWidth = lbawRef.current.clientWidth;
     setLbawDimensions({ width: lbawWidth, height: lbawHeight });
+
+    ltwRef.current = document.getElementById("ltw");
+    ltwHeight = ltwRef.current.clientHeight;
+    ltwWidth = ltwRef.current.clientWidth;
+    setLtwDimensions({ width: ltwWidth, height: ltwHeight });
 
     /**
      * ScrollTrigger Auto Configurations
@@ -291,7 +302,138 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-        
+        </div>
+
+
+        <div  className="projects-container ltw" 
+              id="ltw"
+              onMouseEnter={() => LtwSetIsShown(true)}
+              onMouseLeave={() => LtwSetIsShown(false)}
+              onMouseMove={(event) => handleMouseMove(event, ltwRef)}
+              >
+          
+          <div className="projects-card"
+                style={{
+                  transform: LtwIsShown
+                    ? `rotateX(${((ltwDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((ltwDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                    : 'none',
+                  transition: 'none'
+                }}
+                >
+            <div className="img-card">            
+              <div className="circle"></div>
+              <img id="img-self-bird" src={ lbawPic } alt="bird" />
+            </div>
+            <div className="info">
+              <h1 className="title-card">Web Languages and Technologies</h1>
+              <h3>
+              Web Languages and Technologies
+              </h3>
+              <div className="readmore">
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div  className="projects-container lbaw" 
+              id="lbaw"
+              onMouseEnter={() => LbawSetIsShown(true)}
+              onMouseLeave={() => LbawSetIsShown(false)}
+              onMouseMove={(event) => handleMouseMove(event, lbawRef)}
+              >
+          
+          <div className="projects-card"
+                style={{
+                  transform: LbawIsShown
+                    ? `rotateX(${((lbawDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((lbawDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                    : 'none',
+                  transition: 'none'
+                }}
+                >
+            <div className="img-card">            
+              <div className="circle"></div>
+              <img id="img-self-bird" src={ lbawPic } alt="bird" />
+            </div>
+            <div className="info">
+              <h1 className="title-card">Optimizations - Travelling Salesman Problem</h1>
+              <h3>
+              Optimizations - Travelling Salesman Problem
+              </h3>
+              <div className="readmore">
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div  className="projects-container lbaw" 
+              id="lbaw"
+              onMouseEnter={() => LbawSetIsShown(true)}
+              onMouseLeave={() => LbawSetIsShown(false)}
+              onMouseMove={(event) => handleMouseMove(event, lbawRef)}
+              >
+          
+          <div className="projects-card"
+                style={{
+                  transform: LbawIsShown
+                    ? `rotateX(${((lbawDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((lbawDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                    : 'none',
+                  transition: 'none'
+                }}
+                >
+            <div className="img-card">            
+              <div className="circle"></div>
+              <img id="img-self-bird" src={ lbawPic } alt="bird" />
+            </div>
+            <div className="info">
+              <h1 className="title-card">Optimizations - Travelling Salesman Problem</h1>
+              <h3>
+              Optimizations - Travelling Salesman Problem
+              </h3>
+              <div className="readmore">
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div  className="projects-container lbaw" 
+              id="lbaw"
+              onMouseEnter={() => LbawSetIsShown(true)}
+              onMouseLeave={() => LbawSetIsShown(false)}
+              onMouseMove={(event) => handleMouseMove(event, lbawRef)}
+              >
+          
+          <div className="projects-card"
+                style={{
+                  transform: LbawIsShown
+                    ? `rotateX(${((lbawDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((lbawDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                    : 'none',
+                  transition: 'none'
+                }}
+                >
+            <div className="img-card">            
+              <div className="circle"></div>
+              <img id="img-self-bird" src={ r3fPic } alt="bird" />
+            </div>
+            <div className="info">
+              <h1 className="title-card">This website</h1>
+              <h3>
+              This website is built using cheifly 
+              React Framework (Library),
+              WebGL library - three.js,
+              GreenSock (gsap),
+              html, css, js and others.
+              </h3>
+              <div className="readmore">
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
         </div>
         
       </div>
