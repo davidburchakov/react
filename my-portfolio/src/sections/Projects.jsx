@@ -19,6 +19,8 @@ const ProjectsSection = () => {
   const [CompilerIsShown, CompilerSetIsShown] = useState(false);
   const [LbawIsShown, LbawSetIsShown] = useState(false);
   const [LtwIsShown, LtwSetIsShown] = useState(false);
+  const [TspAiIsShown, TspAiSetIsShown] = useState(false);
+  const [TspDaIsShown, TspDaSetIsShown] = useState(false);
 
   const [globalMousePos, setGlobalMousePos] = useState({});
   const [localMousePos, setLocalMousePos] = useState({});
@@ -27,6 +29,8 @@ const ProjectsSection = () => {
   const [compilerDimensions, setCompilerDimensions] = useState({ width: null, height: null });
   const [lbawDimensions, setLbawDimensions] = useState({ width: null, height: null });
   const [ltwDimensions, setLtwDimensions] = useState({ width: null, height: null });
+  const [tspAiDimensions, setTspAiDimensions] = useState({ width: null, height: null });
+  const [tspDaDimensions, setTspDaDimensions] = useState({ width: null, height: null });
 
   const pileRef = useRef(null);
 
@@ -45,6 +49,12 @@ const ProjectsSection = () => {
   const ltwRef = useRef(null);
   let ltwHeight = null;
   let ltwWidth = null;
+  const tspAiRef = useRef(null);
+  let tspAiHeight = null;
+  let tspAiWidth = null;
+  const tspDaRef = useRef(null);
+  let tspDaHeight = null;
+  let tspDaWidth = null;
 
   
   const handleMouseMove = (event, ref) => {
@@ -91,6 +101,16 @@ const ProjectsSection = () => {
     ltwHeight = ltwRef.current.clientHeight;
     ltwWidth = ltwRef.current.clientWidth;
     setLtwDimensions({ width: ltwWidth, height: ltwHeight });
+
+    tspAiRef.current = document.getElementById("tsp-ai");
+    tspAiHeight = tspAiRef.current.clientHeight;
+    tspAiWidth = tspAiRef.current.clientWidth;
+    setTspAiDimensions({ width: tspAiWidth, height: tspAiHeight });
+
+    tspDaRef.current = document.getElementById("tsp-da");
+    tspDaHeight = tspDaRef.current.clientHeight;
+    tspDaWidth = tspDaRef.current.clientWidth;
+    setTspDaDimensions({ width: tspDaWidth, height: tspDaHeight });
 
     /**
      * ScrollTrigger Auto Configurations
@@ -337,17 +357,17 @@ const ProjectsSection = () => {
         </div>
 
 
-        <div  className="projects-container lbaw" 
-              id="lbaw"
-              onMouseEnter={() => LbawSetIsShown(true)}
-              onMouseLeave={() => LbawSetIsShown(false)}
-              onMouseMove={(event) => handleMouseMove(event, lbawRef)}
+        <div  className="projects-container tsp-ai" 
+              id="tsp-ai"
+              onMouseEnter={() => TspAiSetIsShown(true)}
+              onMouseLeave={() => TspAiSetIsShown(false)}
+              onMouseMove={(event) => handleMouseMove(event, tspAiRef)}
               >
           
           <div className="projects-card"
                 style={{
-                  transform: LbawIsShown
-                    ? `rotateX(${((lbawDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((lbawDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                  transform: TspAiIsShown
+                    ? `rotateX(${((tspAiDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((tspAiDimensions.width / 2) - localMousePos.x) / 30}deg)`
                     : 'none',
                   transition: 'none'
                 }}
@@ -369,17 +389,17 @@ const ProjectsSection = () => {
         </div>
 
 
-        <div  className="projects-container lbaw" 
-              id="lbaw"
-              onMouseEnter={() => LbawSetIsShown(true)}
-              onMouseLeave={() => LbawSetIsShown(false)}
-              onMouseMove={(event) => handleMouseMove(event, lbawRef)}
+        <div  className="projects-container tsp-da" 
+              id="tsp-da"
+              onMouseEnter={() => TspDaSetIsShown(true)}
+              onMouseLeave={() => TspDaSetIsShown(false)}
+              onMouseMove={(event) => handleMouseMove(event, tspDaRef)}
               >
           
           <div className="projects-card"
                 style={{
-                  transform: LbawIsShown
-                    ? `rotateX(${((lbawDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((lbawDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                  transform: TspDaIsShown
+                    ? `rotateX(${((tspDaDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((tspDaDimensions.width / 2) - localMousePos.x) / 30}deg)`
                     : 'none',
                   transition: 'none'
                 }}
