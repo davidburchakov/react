@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import birdPic from "static/img/bird.png";
 import supervisionPic from "static/img/supervision.png";
 import compilerPic from "static/img/compiler.png";
+import lbawPic from "static/img/lbaw.png";
 import 'css/projects.css';
 // import 'js/gsap-scroll.js';
 import { gsap, Power3 } from "gsap";
@@ -15,13 +16,14 @@ const ProjectsSection = () => {
   const [BirdIsShown, BirdSetIsShown] = useState(false);
   const [SupervisionIsShown, SupervisionSetIsShown] = useState(false);
   const [CompilerIsShown, CompilerSetIsShown] = useState(false);
+  const [LbawIsShown, LbawSetIsShown] = useState(false);
 
   const [globalMousePos, setGlobalMousePos] = useState({});
   const [localMousePos, setLocalMousePos] = useState({});
   const [birdDimensions, setBirdDimensions] = useState({ width: null, height: null });
   const [supervisionDimensions, setSupervisionDimensions] = useState({ width: null, height: null });
   const [compilerDimensions, setCompilerDimensions] = useState({ width: null, height: null });
-
+  const [lbawDimensions, setLbawDimensions] = useState({ width: null, height: null });
 
   const pileRef = useRef(null);
 
@@ -34,12 +36,15 @@ const ProjectsSection = () => {
   const compilerRef = useRef(null);
   let compilerHeight = null;
   let compilerWidth = null;
+  const lbawRef = useRef(null);
+  let lbawHeight = null;
+  let lbawWidth = null;
 
   
   const handleMouseMove = (event, ref) => {
     // 👇 Get mouse position relative to bird container
     const localX = event.clientX - ref.current.getBoundingClientRect().left;
-    const localY = event.clientY - birdRef.current.getBoundingClientRect().top;
+    const localY = event.clientY - ref.current.getBoundingClientRect().top;
   
     setLocalMousePos({ x: localX, y: localY });
   };
@@ -71,9 +76,10 @@ const ProjectsSection = () => {
     compilerWidth = compilerRef.current.clientWidth;
     setCompilerDimensions({ width: compilerWidth, height: compilerHeight });
 
-    console.log(birdRef)
-    console.log(supervisionRef)
-    console.log(compilerRef)
+    lbawRef.current = document.getElementById("lbaw");
+    lbawHeight = lbawRef.current.clientHeight;
+    lbawWidth = lbawRef.current.clientWidth;
+    setLbawDimensions({ width: lbawWidth, height: lbawHeight });
 
     /**
      * ScrollTrigger Auto Configurations
@@ -141,7 +147,7 @@ const ProjectsSection = () => {
 
       <div className="pile" ref={pileRef}>
 
-        <div  className="projects-container bird " 
+        <div className="projects-container bird " 
               id="bird"
               onMouseEnter={() => BirdSetIsShown(true)}
               onMouseLeave={() => BirdSetIsShown(false)}
@@ -149,7 +155,7 @@ const ProjectsSection = () => {
 
               >
           
-          <div  className="projects-card"
+          <div className="projects-card"
                 style={{
                   transform: BirdIsShown
                     ? `rotateX(${((birdDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((birdDimensions.width / 2) - localMousePos.x) / 30}deg)`
@@ -173,14 +179,14 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        <div  className="projects-container supervision " 
+        <div className="projects-container supervision " 
               id="supervision"
               onMouseEnter={() => SupervisionSetIsShown(true)}
               onMouseLeave={() => SupervisionSetIsShown(false)}
               onMouseMove={(event) => handleMouseMove(event, supervisionRef)}
               >
           
-          <div  className="projects-card"
+          <div className="projects-card"
                 style={{
                   transform: SupervisionIsShown
                     ? `rotateX(${((supervisionDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((supervisionDimensions.width / 2) - localMousePos.x) / 30}deg)`
@@ -193,9 +199,17 @@ const ProjectsSection = () => {
               <img id="img-self-bird" src={ supervisionPic } alt="bird" />
             </div>
             <div className="info">
-              <h1 className="title-card">Computer Graphics</h1>
+              <h1 className="title-card">Supervision Learning</h1>
               <h3>
-                Computer Graphics projects using WebCGF (Web Computer Graphics @ FEUP) - a library based on WebGL developed by teachers and alumni of GIG, DEI at the Faculty of Engineering of the University of Porto to support the computer graphics courses lectured primarily in the Master in Informatics and Computing Engineering (MIEIC).
+                Supervision Learning project.
+                Application of different Machine Learning algorithms, including
+                Nearest Neighbor,
+                SVM,
+                Decision Trees and
+                Neural Networks
+                and a comparison of theese algorithms.
+                The purpose of the project is to find a binary solution for
+                real-life data - Regensburg Pediatric Appendicitis dataset.
               </h3>
               <div className="readmore">
                 <button>Read More</button>
@@ -204,7 +218,8 @@ const ProjectsSection = () => {
           </div>
         </div>
 
-        <div  className="projects-container compiler " 
+
+        <div className="projects-container compiler " 
               id="compiler"
               onMouseEnter={() => CompilerSetIsShown(true)}
               onMouseLeave={() => CompilerSetIsShown(false)}
@@ -241,6 +256,44 @@ const ProjectsSection = () => {
         </div>
 
 
+        <div  className="projects-container lbaw" 
+              id="lbaw"
+              onMouseEnter={() => LbawSetIsShown(true)}
+              onMouseLeave={() => LbawSetIsShown(false)}
+              onMouseMove={(event) => handleMouseMove(event, lbawRef)}
+              >
+          
+          <div className="projects-card"
+                style={{
+                  transform: LbawIsShown
+                    ? `rotateX(${((lbawDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((lbawDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                    : 'none',
+                  transition: 'none'
+                }}
+                >
+            <div className="img-card">            
+              <div className="circle"></div>
+              <img id="img-self-bird" src={ lbawPic } alt="bird" />
+            </div>
+            <div className="info">
+              <h1 className="title-card">Database and Web Applications Laboratory</h1>
+              <h3>
+                Web project that uses technologies such as
+                Laravel,
+                PostgresDB,
+                PHP,
+                JS,
+                AJAX calls, 
+                etc.
+              </h3>
+              <div className="readmore">
+                <button>Read More</button>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        
       </div>
     </section>
   );

@@ -12,7 +12,6 @@
     z-index: 1;
 }
 
-
 .pile{
     width: 90%;
     position: relative;
@@ -21,6 +20,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    gap: 5rem 0px;
 }
 
 .projects-container{
@@ -37,7 +37,7 @@
     top:20px;
 }
 
-  
+
 .bird:hover{
     top: -5px;
 }
@@ -47,7 +47,7 @@
 }
 
 .bird:hover .circle{
-    transform: translateX(-25px);
+    /* pass */
 }
 
 .bird:hover .img-card{
@@ -55,7 +55,7 @@
 }
 
 .bird:hover #img-self-bird{
-    transform: rotateZ(-15deg);
+    transform: rotateZ(-15deg) translateX(20px) translateY(5px);
 }
 
 
@@ -74,16 +74,13 @@
 }
 
 .supervision:hover .circle{
-    transform: translateX(-25px);
+    transform: scale(1.1);
 }
 
 .supervision:hover .img-card{
     transform: translateZ(100px);
 }
 
-.supervision:hover #img-self-supervision{
-    transform: rotateZ(-15deg);
-}
 
 .compiler{
     transition: top 1s;
@@ -100,16 +97,38 @@
 }
 
 .compiler:hover .circle{
-    transform: translateX(-25px);
+    transform: scale(1.1);
 }
 
 .compiler:hover .img-card{
     transform: translateZ(100px);
 }
 
-.compiler:hover #img-self-compiler{
-    transform: rotateZ(-15deg);
+.lbaw{
+    transition: top 1s;
+    position: relative;
+    top:20px;
 }
+
+
+.lbaw:hover{
+    top: -5px;
+}
+
+.lbaw:hover .info{
+    transform: translateZ(100px);
+}
+
+.lbaw:hover .circle{
+    transform: scale(1.1);
+}
+
+.lbaw:hover .img-card{
+    transform: translateZ(100px);
+}
+
+
+
 
 .projects-card{
     /* min-height: 80vh; */
@@ -131,13 +150,16 @@
     align-items: center;
     justify-content: center;
     transition: all 0.5s ease;
+    border-radius: 50%;
 }
 
 .img-card img{
-    width: 20rem;
+    width: 10rem;
+    height: 10rem;
     z-index: 2;
     transition: all 2s ease;
-    
+    object-fit: cover;
+    border-radius: inherit;
 }
 
 .circle{
