@@ -4,6 +4,8 @@ import supervisionPic from "static/img/supervision.png";
 import compilerPic from "static/img/compiler.png";
 import lbawPic from "static/img/lbaw.png";
 import r3fPic from "static/img/r3f.png";
+import ltwPic from "static/img/ltw.png";
+import tspAiPic from "static/img/tsp-ai.png"
 import 'css/projects.css';
 // import 'js/gsap-scroll.js';
 import { gsap, Power3 } from "gsap";
@@ -352,7 +354,7 @@ const ProjectsSection = () => {
                 >
             <div className="img-card">            
               <div className="circle"></div>
-              <img id="img-self-bird" src={ lbawPic } alt="bird" />
+              <img id="img-self-bird" src={ ltwPic } alt="bird" />
             </div>
             <div className="info">
               <h1 className="title-card">Web Languages and Technologies</h1>
@@ -384,7 +386,7 @@ const ProjectsSection = () => {
                 >
             <div className="img-card">            
               <div className="circle"></div>
-              <img id="img-self-bird" src={ lbawPic } alt="bird" />
+              <img id="img-self-bird" src={ tspAiPic } alt="bird" />
             </div>
             <div className="info">
               <h1 className="title-card">Optimizations - Travelling Salesman Problem</h1>

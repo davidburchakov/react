@@ -108,26 +108,120 @@
     transition: top 1s;
     position: relative;
     top:20px;
-}
+    }
 
 
 .lbaw:hover{
     top: -5px;
-}
+    }
 
 .lbaw:hover .info{
     transform: translateZ(100px);
-}
+    }
 
 .lbaw:hover .circle{
     transform: scale(1.1);
-}
+    }
 
 .lbaw:hover .img-card{
     transform: translateZ(100px);
-}
+    }
 
 
+.ltw{
+    transition: top 1s;
+    position: relative;
+    top:20px;
+    }
+
+
+.ltw:hover{
+    top: -5px;
+    }
+
+.ltw:hover .info{
+    transform: translateZ(100px);
+    }
+
+.ltw:hover .circle{
+    transform: scale(1.1);
+    }
+
+.ltw:hover .img-card{
+    transform: translateZ(100px);
+    }
+
+
+.tsp-ai{
+    transition: top 1s;
+    position: relative;
+    top:20px;
+    }
+
+
+.tsp-ai:hover{
+    top: -5px;
+    }
+
+.tsp-ai:hover .info{
+    transform: translateZ(100px);
+    }
+
+.tsp-ai:hover .circle{
+    transform: scale(1.1);
+    }
+
+.tsp-ai:hover .img-card{
+    transform: translateZ(100px);
+    }
+
+
+.tsp-da{
+    transition: top 1s;
+    position: relative;
+    top:20px;
+    }
+
+
+.tsp-da:hover{
+    top: -5px;
+    }
+
+.tsp-da:hover .info{
+    transform: translateZ(100px);
+    }
+
+.tsp-da:hover .circle{
+    transform: scale(1.1);
+    }
+
+.tsp-da:hover .img-card{
+    transform: translateZ(100px);
+    }
+
+
+.r3f{
+    transition: top 1s;
+    position: relative;
+    top:20px;
+    }
+
+
+.r3f:hover{
+    top: -5px;
+    }
+
+.r3f:hover .info{
+    transform: translateZ(100px);
+    }
+
+.r3f:hover .circle{
+    transform: scale(1.1);
+    }
+
+.r3f:hover .img-card{
+    transform: translateZ(100px);
+    }
 
 
 .projects-card{
