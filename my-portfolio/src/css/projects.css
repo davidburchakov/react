@@ -24,7 +24,7 @@
 }
 
 .projects-container{
-    height: 110%;
+    height: 115%;
     align-items: center;
     justify-content: center;
     perspective: 1000px;
@@ -39,7 +39,7 @@
 
   
 .bird:hover{
-    top: -20px;
+    top: -5px;
 }
 
 .bird:hover .info{
@@ -66,7 +66,7 @@
 }
 
 .supervision:hover{
-    top: -20px;
+    top: -5px;
 }
 
 .supervision:hover .info{
@@ -92,7 +92,7 @@
 }
 
 .compiler:hover{
-    top: -20px;
+    top: -5px;
 }
 
 .compiler:hover .info{

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import bird from "static/img/bird.png";
+import birdPic from "static/img/bird.png";
+import supervisionPic from "static/img/supervision.png";
+import compilerPic from "static/img/compiler.png";
 import 'css/projects.css';
 // import 'js/gsap-scroll.js';
 import { gsap, Power3 } from "gsap";
@@ -157,7 +159,7 @@ const ProjectsSection = () => {
                 >
             <div className="img-card">            
               <div className="circle"></div>
-              <img id="img-self-bird" src={ bird } alt="bird" />
+              <img id="img-self-bird" src={ birdPic } alt="bird" />
             </div>
             <div className="info">
               <h1 className="title-card">Computer Graphics</h1>
@@ -188,7 +190,7 @@ const ProjectsSection = () => {
                 >
             <div className="img-card">            
               <div className="circle"></div>
-              <img id="img-self-bird" src={ bird } alt="bird" />
+              <img id="img-self-bird" src={ supervisionPic } alt="bird" />
             </div>
             <div className="info">
               <h1 className="title-card">Computer Graphics</h1>
@@ -219,12 +221,17 @@ const ProjectsSection = () => {
                 >
             <div className="img-card">            
               <div className="circle"></div>
-              <img id="img-self-bird" src={ bird } alt="bird" />
+              <img id="img-self-bird" src={ compilerPic } alt="bird" />
             </div>
             <div className="info">
-              <h1 className="title-card">Computer Graphics</h1>
+              <h1 className="title-card">Compilers</h1>
               <h3>
-                Computer Graphics projects using WebCGF (Web Computer Graphics @ FEUP) - a library based on WebGL developed by teachers and alumni of GIG, DEI at the Faculty of Engineering of the University of Porto to support the computer graphics courses lectured primarily in the Master in Informatics and Computing Engineering (MIEIC).
+                Java-like compiler, including 
+                Grammar using antl4, 
+                Semantic Analysis, 
+                OLLIR and
+                Jasmin.
+                Done as a part of the Faculty of Engineering of the University of Porto curriculum.
               </h3>
               <div className="readmore">
                 <button>Read More</button>
