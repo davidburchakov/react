@@ -21,6 +21,7 @@ const ProjectsSection = () => {
   const [LtwIsShown, LtwSetIsShown] = useState(false);
   const [TspAiIsShown, TspAiSetIsShown] = useState(false);
   const [TspDaIsShown, TspDaSetIsShown] = useState(false);
+  const [R3fIsShown, R3fSetIsShown] = useState(false);
 
   const [globalMousePos, setGlobalMousePos] = useState({});
   const [localMousePos, setLocalMousePos] = useState({});
@@ -31,6 +32,7 @@ const ProjectsSection = () => {
   const [ltwDimensions, setLtwDimensions] = useState({ width: null, height: null });
   const [tspAiDimensions, setTspAiDimensions] = useState({ width: null, height: null });
   const [tspDaDimensions, setTspDaDimensions] = useState({ width: null, height: null });
+  const [r3fDimensions, setR3fDimensions] = useState({ width: null, height: null });
 
   const pileRef = useRef(null);
 
@@ -55,6 +57,9 @@ const ProjectsSection = () => {
   const tspDaRef = useRef(null);
   let tspDaHeight = null;
   let tspDaWidth = null;
+  const r3fRef = useRef(null);
+  let r3fHeight = null;
+  let r3fWidth = null;
 
   
   const handleMouseMove = (event, ref) => {
@@ -111,6 +116,11 @@ const ProjectsSection = () => {
     tspDaHeight = tspDaRef.current.clientHeight;
     tspDaWidth = tspDaRef.current.clientWidth;
     setTspDaDimensions({ width: tspDaWidth, height: tspDaHeight });
+
+    r3fRef.current = document.getElementById("r3f");
+    r3fHeight = r3fRef.current.clientHeight;
+    r3fWidth = r3fRef.current.clientWidth;
+    setR3fDimensions({ width: r3fWidth, height: r3fHeight });
 
     /**
      * ScrollTrigger Auto Configurations
@@ -421,17 +431,17 @@ const ProjectsSection = () => {
         </div>
 
 
-        <div  className="projects-container lbaw" 
-              id="lbaw"
-              onMouseEnter={() => LbawSetIsShown(true)}
-              onMouseLeave={() => LbawSetIsShown(false)}
-              onMouseMove={(event) => handleMouseMove(event, lbawRef)}
+        <div  className="projects-container r3f" 
+              id="r3f"
+              onMouseEnter={() => R3fSetIsShown(true)}
+              onMouseLeave={() => R3fSetIsShown(false)}
+              onMouseMove={(event) => handleMouseMove(event, r3fRef)}
               >
           
           <div className="projects-card"
                 style={{
-                  transform: LbawIsShown
-                    ? `rotateX(${((lbawDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((lbawDimensions.width / 2) - localMousePos.x) / 30}deg)`
+                  transform: R3fIsShown
+                    ? `rotateX(${((r3fDimensions.height / 2) - localMousePos.y) / 20}deg) rotateY(${((r3fDimensions.width / 2) - localMousePos.x) / 30}deg)`
                     : 'none',
                   transition: 'none'
                 }}
