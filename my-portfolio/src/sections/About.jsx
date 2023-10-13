@@ -6,7 +6,7 @@ export default function About() {
     let listItems = [...document.querySelectorAll('.about li')];
 
     let options = {
-      rootMargin: '-20%',
+      rootMargin: '-15%',
       threshold: 0.0
     };
 
@@ -33,18 +33,22 @@ export default function About() {
 
   return (
     <section className="section about" id="about">
-      <h1>Welcome to my portfolio</h1>
+      <h1>Welcome to my online portfolio</h1>
       <ul>
         <li><span>Hello!</span></li>
         <li><span>My name is <i>David Burchakov</i></span></li>
-        <li><span>I'm a bachelor student of Cracow University of Technology (Politechnika Krakowska).</span></li>
-        <li><span>My interests include software design and development, web developments, artificial intelligence.</span></li>
-        <li><span>I'm currently a final-year student working towards my Bachelor degree in Informatics and Telecommunications.</span></li>
-        <li><span>Hire me!</span></li>
-        <li><span>Hire me!</span></li>
-        <li><span>Hire me!</span></li>
-        <li><span>Hire me!</span></li>
-        <li><span>Hire me!</span></li>
+        <li><span>I'm a bachelor student of Cracow University of Technology (Politechnika Krakowska)</span></li>
+        <li><span>My interests include web developments, artificial intelligence, Natural Language Processing</span></li>
+        <li><span>I'm currently a final-year student working towards my Bachelor degree in Computer Science</span></li>
+        <li><span><a href="https://it.pk.edu.pl/" target='_blank' >@Wydział Informatyki i Telekomunikacji Politechniki Krakowskiej</a></span></li>
+        <li><span>Moreover, I was lucky to participate in the EU Erasmus exchange program</span></li>
+        <li><span>and studied in the University of Porto, Portugal</span></li>
+        <li><span><a href="https://sigarra.up.pt/feup/pt/web_page.inicial" target='_blank' >@Faculdade de Engenharia da Universidade do Porto</a></span></li>
+        <li><span>I'm a hard-working, humble and rational guy</span></li>
+        <li><span>currently looking for a job</span></li>
+        <li><span>Feel free to contact me</span></li>
+        <li><span>I speak English, Polish and Russian</span></li>
+
       </ul>
     </section>
   );

@@ -7,14 +7,14 @@
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  min-height: 200vh; 
+  min-height: 120vh; 
   }
 
 .about h1{
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 0px;
+    top: 0%;
     width: 100%;
     text-align: center;
     font-size: 5rem;
@@ -23,7 +23,7 @@
 
 .about ul{
     position: absolute;
-    top: 5rem;
+    top: 10%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -46,8 +46,25 @@
     margin: 0.05rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     transform: translateY(200%);
-    text-transform: lowercase;
 }
+
+.about ul li span a{
+  text-decoration: none;
+  transition: 1s;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.about ul li span a[href="https://it.pk.edu.pl/"]{
+  color: #c38352;
+}
+
+.about ul li span a[href="https://sigarra.up.pt/feup/pt/web_page.inicial"]{
+  color: #67c92f;
+}
+
 
 .about ul li span.active{
     transform: translateY(0%);
@@ -56,6 +73,7 @@
 
 .about ul li:hover{
     opacity: 0.8;
+    cursor: default;
 }
 
 .gap{
