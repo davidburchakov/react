@@ -1,16 +1,14 @@
 import 'css/hero.css';
 import reading from 'static/img/reading-book.png';
 import Models from 'components/Models.jsx';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Suspense } from 'react'
 
 const gsap = window.gsap;
 const ScrollTrigger = window.ScrollTrigger;
 gsap.registerPlugin(ScrollTrigger)
+
 export default function Hero() {
-
-
-  
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -25,10 +23,6 @@ export default function Hero() {
       ctx.revert();
     };
   }, []);
-
-
-
-
 
     return (
         <section className="section hero">
