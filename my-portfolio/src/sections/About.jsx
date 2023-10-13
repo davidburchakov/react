@@ -6,7 +6,7 @@ export default function About() {
     let listItems = [...document.querySelectorAll('.about li')];
 
     let options = {
-      rootMargin: '-30%',
+      rootMargin: '-20%',
       threshold: 0.0
     };
 
@@ -33,13 +33,13 @@ export default function About() {
 
   return (
     <section className="section about" id="about">
-      <h1>Welcome.</h1>
+      <h1>Welcome to my portfolio</h1>
       <ul>
         <li><span>Hello!</span></li>
-        <li><span>My name is David</span></li>
-        <li><span>Hire me!</span></li>
-        <li><span>Hire me!</span></li>
-        <li><span>Hire me!</span></li>
+        <li><span>My name is <i>David Burchakov</i></span></li>
+        <li><span>I'm a bachelor student of Cracow University of Technology (Politechnika Krakowska).</span></li>
+        <li><span>My interests include software design and development, web developments, artificial intelligence.</span></li>
+        <li><span>I'm currently a final-year student working towards my Bachelor degree in Informatics and Telecommunications.</span></li>
         <li><span>Hire me!</span></li>
         <li><span>Hire me!</span></li>
         <li><span>Hire me!</span></li>
