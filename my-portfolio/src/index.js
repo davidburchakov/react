@@ -9,49 +9,26 @@ import Hero from './sections/Hero.jsx';
 import About from './sections/About.jsx';
 import Projects from './sections/Projects.jsx';
 import More from './sections/More.jsx';
-import Contact from './sections/Contact.jsx';
+import Finale from './sections/Finale.jsx';
 import reportWebVitals from './reportWebVitals';
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
-import { BoxGeometry } from 'three';
+
 import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei'
 // JSX Tag Language
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Set a background color when the canvas is created
-const created = ({gl}) => {
-  // gl.setClearColor('#ff0000', 1)
-}
+
 
 root.render(
   <React.StrictMode>
-
-        
         <Header />
         <Hero />
-        
-        
         <About />
         <Projects />
         <More />
+        <Finale />
 
-        <section className="section contact">
-            <h1 className="">Contact Me</h1>
-        <Canvas
-              dpr={ [0.1, 0.6] } 
-              onCreated={ created }
-              camera={{
-                fov: 45,
-                near: 0.1,
-                far: 2000,
-                position: [ -3, 1.5, 4 ]
-              }}
-              >
-          <AdaptiveDpr pixelated />
-          <AdaptiveEvents />
-          {/* <Contact /> */}
-        </Canvas>
-        </section>
   
   </React.StrictMode>
 

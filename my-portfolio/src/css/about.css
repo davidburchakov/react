@@ -1,40 +1,81 @@
   /* --------------------- About section  --------------------- */
   
-  .about{
+.about{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  min-height: 130vh; 
+  }
+
+.about h1{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-   
-  }
-  
-  .about-text {
-    z-index: 100;
     position: absolute;
-    max-width: 100vh;
+    top: 0%;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    letter-spacing: 2px;
+}
+
+.about ul{
+    position: absolute;
     top: 10%;
-    left: 35%;
-    transform: rotate(-2.5deg);
-    /* Legacy vendor prefixes that you probably don't need... */
-    /* Safari */
-    -webkit-transform: rotate(-2.5deg);
-    /* Firefox */
-    -moz-transform: rotate(-2.5deg);
-    /* IE */
-    -ms-transform: rotate(-2.5deg);
-    /* Opera */
-    -o-transform: rotate(-2.5deg);
-  }
-  .about-text p{
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 200;
-    letter-spacing: -.05em;
-    margin-bottom: 8rem;
-    font-size: clamp(20px, 1.5vw, 70px);
-    /* padding: 0 1%; */
-  }
-  
-  .about span{
-    opacity: 0.1;
-  }
-  
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about ul li{
+    height: 4rem;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+}
+
+.about ul li span{
+    display: block;
+    line-height: 4rem;
+    font-size: 2rem;
+    font-weight: lighter;
+    margin: 0.05rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transform: translateY(200%);
+}
+
+.about ul li span a{
+  text-decoration: none;
+  transition: 1s;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.about ul li span a[href="https://it.pk.edu.pl/"]{
+  color: #c38352;
+}
+
+.about ul li span a[href="https://sigarra.up.pt/feup/pt/web_page.inicial"]{
+  color: #67c92f;
+}
+
+
+.about ul li span.active{
+    transform: translateY(0%);
+    transition: .3s ease-out;
+}
+
+.about ul li:hover{
+    opacity: 0.8;
+    cursor: default;
+}
+
+.gap{
+    width: 1rem;
+}

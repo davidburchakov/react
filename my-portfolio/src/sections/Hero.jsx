@@ -1,5 +1,4 @@
 import 'css/hero.css';
-import 'css/scroll-button.css';
 import reading from 'static/img/reading-book.png';
 import Models from 'components/Models.jsx';
 import { Suspense } from 'react'
@@ -18,20 +17,14 @@ export default function Hero() {
           <img src={ reading } alt="avatar" />
         </div>
         <Suspense>
-        <Models />
+          <Models />
         </Suspense>
         {/* <div class="animated-avatar-container">
           <img src="static/img/reading-book.png" alt="avatar">
           <video src="static/videos/splash-ink.mp4" autoplay muted loop></video>
         </div> */}
         {/* onClick="window.delayedTransition()" */}
-        <a >
-        <div className="scrollDown">
-          <span></span>
-          <span></span>
-          <span></span>
-          </div>
-        </a>
+
       </section>
     );
 }
