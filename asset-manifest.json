@@ -1,19 +1,25 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.39c4da6d.css",
-    "main.js": "/react/static/js/main.efb8b2aa.js",
+    "main.css": "/react/static/css/main.4749f275.css",
+    "main.js": "/react/static/js/main.2e86930c.js",
     "static/js/787.128fc6e9.chunk.js": "/react/static/js/787.128fc6e9.chunk.js",
     "static/media/reading-book.png": "/react/static/media/reading-book.c1ae92849b8a67ada8f0.png",
+    "static/media/lbaw.png": "/react/static/media/lbaw.b0f094b0628b96e7031e.png",
+    "static/media/r3f.png": "/react/static/media/r3f.934e4d3851b907ef2783.png",
+    "static/media/ltw.png": "/react/static/media/ltw.60dd20df1a5c8877f555.png",
+    "static/media/compiler.png": "/react/static/media/compiler.1c083f12411e762fad4f.png",
+    "static/media/supervision.png": "/react/static/media/supervision.bf0478d15d8ce5257dfd.png",
     "static/media/bird.png": "/react/static/media/bird.7c99eb7054b2457c15c8.png",
     "static/media/mask.png": "/react/static/media/mask.7aa10fce0f4b3a73e1a3.png",
+    "static/media/tsp-ai.png": "/react/static/media/tsp-ai.25d11112b1efaebe29b1.png",
     "static/media/logo.svg": "/react/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/react/index.html",
-    "main.39c4da6d.css.map": "/react/static/css/main.39c4da6d.css.map",
-    "main.efb8b2aa.js.map": "/react/static/js/main.efb8b2aa.js.map",
+    "main.4749f275.css.map": "/react/static/css/main.4749f275.css.map",
+    "main.2e86930c.js.map": "/react/static/js/main.2e86930c.js.map",
     "787.128fc6e9.chunk.js.map": "/react/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.39c4da6d.css",
-    "static/js/main.efb8b2aa.js"
+    "static/css/main.4749f275.css",
+    "static/js/main.2e86930c.js"
   ]
 }
