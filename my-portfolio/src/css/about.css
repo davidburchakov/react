@@ -43,7 +43,7 @@
     line-height: 4rem;
     font-size: 4rem;
     margin: 0.05rem;
-    /* transform: translateY(200%); */
+    transform: translateY(200%);
 }
 
 .about ul li span.active{
