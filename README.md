@@ -82,3 +82,7 @@ https://codesandbox.io/s/bp6tmc?file=/src/App.js
 
 ##### Canvases Vs. Views
 https://discourse.threejs.org/t/canvases-vs-views/55858
+
+##### defer model rendering
+https://github.com/pmndrs/react-three-fiber/discussions/769
+*react-intersection-observer*
