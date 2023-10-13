@@ -21,7 +21,7 @@ function More() {
           end: "bottom+=12000px top",
           // markers: true,
           pin: true,
-          scrub: 1,
+          scrub: 1000,
           onUpdate: (self) => {
             const scrollpos = self.progress * 30;
             let delay = 1;
@@ -56,7 +56,7 @@ function More() {
     <div className="App" ref={componentRef}>
       <section className="section intro" ref={introRef}>
         <div className="video-container" ref={videoContainerRef}>
-          <h1 ref={textRef}>The New Wingsuit Pro</h1>
+          <h1 ref={textRef}>Let's fly together!</h1>
           <video src={process.env.PUBLIC_URL + '/cloudf.mp4'} type="video/mp4" preload="auto" ref={videoRef}></video>
         </div>
       </section>
