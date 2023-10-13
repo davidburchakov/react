@@ -24,7 +24,7 @@ function More() {
           trigger: videoContainerRef.current,
           start: "top top",
           end: "bottom+=12000px top",
-          markers: true,
+          // markers: true,
           pin: true,
           scrub: 1,
           onUpdate: (self) => {
