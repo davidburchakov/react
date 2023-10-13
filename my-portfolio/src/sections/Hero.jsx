@@ -1,9 +1,34 @@
 import 'css/hero.css';
 import reading from 'static/img/reading-book.png';
 import Models from 'components/Models.jsx';
+import React, { useEffect, useRef } from 'react';
 import { Suspense } from 'react'
 
+const gsap = window.gsap;
+const ScrollTrigger = window.ScrollTrigger;
+gsap.registerPlugin(ScrollTrigger)
 export default function Hero() {
+
+
+  
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { duration: 1 } });
+      tl.fromTo("nav", { y: "-100%" }, { y: "0%" })
+        .fromTo(".title", { opacity: 0 }, { opacity: 1, duration: 1.3 })
+        .fromTo(".subtitle1", { opacity: 0 }, { opacity: 1, duration: 1.3 })
+        .fromTo(".subtitle2", { opacity: 0 }, { opacity: 1, duration: 1.3 })
+    });
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
+
+
+
+
 
     return (
         <section className="section hero">
