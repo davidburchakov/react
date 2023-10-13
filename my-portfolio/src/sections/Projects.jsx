@@ -72,17 +72,6 @@ const ProjectsSection = () => {
     setLocalMousePos({ x: localX, y: localY });
   };
 
-
-  // const tlProjects = gsap.timeline({
-  //   repeat: 0,
-  //   defaults: { duration: 1, ease: Power3.easeInOut },
-  // });
-
-
-  
-
-
-
   useEffect(() => {
     birdRef.current = document.getElementById("bird");
     birdHeight = birdRef.current.clientHeight;
@@ -138,34 +127,12 @@ const ProjectsSection = () => {
 
     ScrollTrigger.addEventListener('refresh', () => console.log('refreshed !'))
 
-    // gsap.to("#bird", {
-    //   scrollTrigger: {
-    //     trigger: "#bird",
-    //     start: "top top",
-    //     end: "center 100px",
-    //     scrub: 1,
-    //     markers: true,
-    //     pin: true,
-    //   },
-    //   x: 400,
-    //   rotation: 360,
-    // });
-
-
-
-
-
-
-
     const handleMouseMove = (event, birdRef) => {
       setGlobalMousePos({
         x: event.clientX,
         y: event.clientY,
       });
-
-
       // console.log(localMousePos)
-
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -177,13 +144,7 @@ const ProjectsSection = () => {
       );
     };
   }, [localMousePos]);
-  
-  
-
-
-
-
-  
+    
   return (
     <section className="section projects">
       <h1>Projects</h1>
@@ -195,9 +156,7 @@ const ProjectsSection = () => {
               onMouseEnter={() => BirdSetIsShown(true)}
               onMouseLeave={() => BirdSetIsShown(false)}
               onMouseMove={(event) => handleMouseMove(event, birdRef)}
-
               >
-          
           <div className="projects-card"
                 style={{
                   transform: BirdIsShown

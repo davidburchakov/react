@@ -1,15 +1,10 @@
 import "css/more.css";
 import React, { useEffect, useRef } from 'react';
-// import { gsap } from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
 
-// if (typeof window !== "undefined") {
-//   gsap.registerPlugin(ScrollTrigger);
-// }
-// gsap.registerPlugin(ScrollTrigger);
 const gsap = window.gsap;
 const ScrollTrigger = window.ScrollTrigger;
 gsap.registerPlugin(ScrollTrigger)
+
 function More() {
   const componentRef = useRef(null);
   const introRef = useRef(null);
@@ -24,7 +19,7 @@ function More() {
           trigger: videoContainerRef.current,
           start: "top top",
           end: "bottom+=12000px top",
-          markers: true,
+          // markers: true,
           pin: true,
           scrub: 1,
           onUpdate: (self) => {
@@ -48,7 +43,7 @@ function More() {
       });
       return () => {
         animation.kill();
-        // animation.scrollTrigger.kill();
+        textAnim.kill();
       }
     }, componentRef.current);
 

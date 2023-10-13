@@ -2,29 +2,22 @@ import 'css/laptop.css';
 import { useFrame, extend } from '@react-three/fiber';
 import { PresentationControls, Text, Float } from '@react-three/drei';
 import { ContactShadows } from '@react-three/drei';
-
-
 import { Suspense, useRef } from 'react';
 import Laptop from 'components/Laptop.jsx'
 
 extend({Text});
 export default function Contact(){
     
-
-
-    const laptopRef = useRef()
     const groupRef = useRef()
     useFrame((state, delta) => {
         // Rotate the laptop
         // groupRef.current.rotation.y += delta
     })
 
-
     return <>
             {/* Change color of the parent div */}
             <color args={ ['#282c34'] } attach="background"/>
 
-            
             {/* Predefined Preset Environment */}
             {/* <Environment background preset='apartment'/> */}
 
@@ -56,9 +49,9 @@ export default function Contact(){
                     position={[0, 0.55, -1.15]}
                   />
                   {/* Laptop Primitive */}
-                  {/* <Suspense fallback={<Loading />}> */}
+                  <Suspense fallback={<Loading />}>
                     <Laptop/>
-                  {/* </Suspense> */}
+                  </Suspense>
               </Float>
 
               {/* Text */}
@@ -80,17 +73,16 @@ export default function Contact(){
             </PresentationControls>
 
             {/* Shadow */}
-            {/* <ContactShadows
+            <ContactShadows
                 position-y={ -1.4 }
                 opacity={ 0.4 }
                 scale={ 5 }
                 blur={ 2.4 } 
-            /> */}
+            />
 
             </group>
 
     </>
-
 }
 
 function Loading() {
