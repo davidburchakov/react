@@ -25,12 +25,8 @@ const created = ({gl}) => {
 
 root.render(
   <React.StrictMode>
-
-        
         <Header />
         <Hero />
-        
-        
         <About />
         <Projects />
         <More />

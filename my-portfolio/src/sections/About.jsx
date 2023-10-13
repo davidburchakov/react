@@ -27,9 +27,8 @@ export default function About() {
       observer.observe(item);
     });
 
-    // Cleanup the observer when the component unmounts
     return () => observer.disconnect();
-  }, []); // An empty dependency array ensures that this effect runs once, similar to componentDidMount
+  }, []); 
 
   return (
     <section className="section about" id="about">

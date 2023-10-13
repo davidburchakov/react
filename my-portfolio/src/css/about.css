@@ -7,7 +7,7 @@
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  min-height: 120vh; 
+  min-height: 130vh; 
   }
 
 .about h1{
@@ -68,7 +68,7 @@
 
 .about ul li span.active{
     transform: translateY(0%);
-    transition: 1s ease-out;
+    transition: .3s ease-out;
 }
 
 .about ul li:hover{
