@@ -56,9 +56,9 @@ export default function Contact(){
                     position={[0, 0.55, -1.15]}
                   />
                   {/* Laptop Primitive */}
-                  {/* <Suspense fallback={<Loading />}> */}
+                  <Suspense fallback={<Loading />}>
                     <Laptop/>
-                  {/* </Suspense> */}
+                  </Suspense>
               </Float>
 
               {/* Text */}
@@ -80,12 +80,12 @@ export default function Contact(){
             </PresentationControls>
 
             {/* Shadow */}
-            {/* <ContactShadows
+            <ContactShadows
                 position-y={ -1.4 }
                 opacity={ 0.4 }
                 scale={ 5 }
                 blur={ 2.4 } 
-            /> */}
+            />
 
             </group>
 
