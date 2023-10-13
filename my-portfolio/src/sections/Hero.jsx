@@ -17,7 +17,7 @@ export default function Hero() {
           <img src={ reading } alt="avatar" />
         </div>
         <Suspense>
-        <Models />
+          <Models />
         </Suspense>
         {/* <div class="animated-avatar-container">
           <img src="static/img/reading-book.png" alt="avatar">

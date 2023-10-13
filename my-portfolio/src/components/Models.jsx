@@ -24,7 +24,7 @@ export default function Models() {
         <div ref={book4} className="view scale penguine"  />
       </div>
         
-      <Canvas eventSource={ref} className="canvas">
+      <Canvas eventSource={ref} className="canvas" dpr={ [1, 1.5] } >
 
         <View track={book1}>
           <ambientLight intensity={1} />
