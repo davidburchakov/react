@@ -6,8 +6,8 @@ export default function About() {
     let listItems = [...document.querySelectorAll('.about li')];
 
     let options = {
-      rootMargin: '0%',
-      threshold: 1.0
+      rootMargin: '-30%',
+      threshold: 0.0
     };
 
     let observer = new IntersectionObserver(showItem, options);
@@ -16,6 +16,8 @@ export default function About() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.children[0].classList.add('active');
+        }else {
+          entry.target.children[0].classList.remove('active'); // Remove 'active' class when not intersecting
         }
       });
     }
