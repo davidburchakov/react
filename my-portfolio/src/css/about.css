@@ -1,47 +1,61 @@
   /* --------------------- About section  --------------------- */
   
-  .about{
-    margin: 0;
-    padding: 0;
+.about{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  min-height: 200vh; 
+  }
+
+.about h1{
+    position: absolute;
+    top: 40vh;
+    width: 100%;
+    text-align: center;
+    font-size: 6rem;
+    letter-spacing: 2px;
+}
+
+.about ul{
+    position: absolute;
+    right: 5%;
+    top: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    text-align: center;
     justify-content: center;
-    min-height: 200vh;
-    
-  }
-  .about h2{
-    margin-bottom: 30rem;
-  }
-  
-  .about-text {
-    z-index: 100;
-    position: absolute;
-    max-width: 100vh;
-    top: 10%;
-    left: 35%;
-    transform: rotate(-2.5deg);
-    /* Legacy vendor prefixes that you probably don't need... */
-    /* Safari */
-    -webkit-transform: rotate(-2.5deg);
-    /* Firefox */
-    -moz-transform: rotate(-2.5deg);
-    /* IE */
-    -ms-transform: rotate(-2.5deg);
-    /* Opera */
-    -o-transform: rotate(-2.5deg);
-  }
-  .about-text p{
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 200;
-    letter-spacing: -.05em;
-    margin-bottom: 8rem;
-    font-size: clamp(20px, 1.5vw, 70px);
-    /* padding: 0 1%; */
-  }
-  
-  .about span{
-    opacity: 0.1;
-  }
-  
+}
+
+.about ul li{
+    height: 4rem;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    /* background-color: black; */
+}
+
+.about ul li span{
+    display: block;
+    line-height: 4rem;
+    font-size: 4rem;
+    margin: 0.05rem;
+    /* transform: translateY(200%); */
+}
+
+.about ul li span.active{
+    transform: translateY(0%);
+    transition: 1s ease-out;
+}
+
+.about ul li:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.gap{
+    width: 1rem;
+}
