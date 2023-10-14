@@ -17,6 +17,7 @@ export default function Hero() {
         .fromTo(".title", { opacity: 0 }, { opacity: 1, duration: 1.3 })
         .fromTo(".subtitle1", { opacity: 0 }, { opacity: 1, duration: 1.3 })
         .fromTo(".subtitle2", { opacity: 0 }, { opacity: 1, duration: 1.3 })
+        .fromTo(".container", { opacity: 0 }, { opacity: 1, duration: 1.3 })
     });
 
     return () => {

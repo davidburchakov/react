@@ -145,6 +145,11 @@ const ProjectsSection = () => {
     };
   }, [localMousePos]);
     
+  const handleButtonClick = (str) => {
+    const newWindow = window.open(str, '_blank');
+    newWindow.focus();
+  };
+
   return (
     <section className="section projects">
       <h1>Projects</h1>
@@ -175,7 +180,7 @@ const ProjectsSection = () => {
                 Computer Graphics projects using WebCGF (Web Computer Graphics @ FEUP) - a library based on WebGL developed by teachers and alumni of GIG, DEI at the Faculty of Engineering of the University of Porto to support the computer graphics courses lectured primarily in the Master in Informatics and Computing Engineering (MIEIC).
               </h3>
               <div className="readmore">
-                <button>Read More</button>
+                <button onClick={() => handleButtonClick('https://github.com/davidburchakov/CG-bird')}>Read More</button>
               </div>
             </div>
           </div>
@@ -214,7 +219,7 @@ const ProjectsSection = () => {
                 real-life data - Regensburg Pediatric Appendicitis dataset.
               </h3>
               <div className="readmore">
-                <button>Read More</button>
+                <button onClick={() => handleButtonClick('https://github.com/davidburchakov/AI-Appendicitis')}>Read More</button>
               </div>
             </div>
           </div>
@@ -251,7 +256,7 @@ const ProjectsSection = () => {
                 Done as a part of the Faculty of Engineering of the University of Porto curriculum.
               </h3>
               <div className="readmore">
-                <button>Read More</button>
+                <button onClick={() => handleButtonClick('https://github.com/davidburchakov/Compilers')}>Read More</button>
               </div>
             </div>
           </div>
@@ -289,7 +294,7 @@ const ProjectsSection = () => {
                 etc.
               </h3>
               <div className="readmore">
-                <button>Read More</button>
+                <button onClick={() => handleButtonClick('https://github.com/davidburchakov/FEUP-LBAW')}>Read More</button>
               </div>
             </div>
           </div>
@@ -321,7 +326,7 @@ const ProjectsSection = () => {
               Web Languages and Technologies
               </h3>
               <div className="readmore">
-                <button>Read More</button>
+                <button onClick={() => handleButtonClick('https://github.com/FEUP-LTW-2023/project-ltw08g05')}>Read More</button>
               </div>
             </div>
           </div>
@@ -353,7 +358,7 @@ const ProjectsSection = () => {
               Optimizations - Travelling Salesman Problem
               </h3>
               <div className="readmore">
-                <button>Read More</button>
+                <button onClick={() => handleButtonClick('https://github.com/davidburchakov/AI-TSP')}>Read More</button>
               </div>
             </div>
           </div>
@@ -385,7 +390,7 @@ const ProjectsSection = () => {
               Optimizations - Travelling Salesman Problem
               </h3>
               <div className="readmore">
-                <button>Read More</button>
+                <button onClick={() => handleButtonClick('https://github.com/davidburchakov/DA_TSP_Project-2')}>Read More</button>
               </div>
             </div>
           </div>
@@ -421,7 +426,7 @@ const ProjectsSection = () => {
               html, css, js and others.
               </h3>
               <div className="readmore">
-                <button>Read More</button>
+                <button onClick={() => handleButtonClick('https://github.com/davidburchakov/react')}>Read More</button>
               </div>
             </div>
           </div>
