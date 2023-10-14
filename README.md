@@ -56,6 +56,10 @@ Install ffmpeg:
 sudo apt install ffmpeg
 ~~~~
 
+Trim a video using ffmpeg:
+~~~~
+ffmpeg -i input.mp4 -ss 00:05:20 -t 00:10:00 -c:v copy -c:a copy output1.mp4
+~~~~
 
 #### Import gsap with cdn in react:
 https://greensock.com/forums/topic/26390-gsap-cdn-in-react/
