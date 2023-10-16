@@ -32,7 +32,7 @@ export default function About() {
 
   return (
     <section className="section about" id="about">
-      <h1>Welcome to my online portfolio</h1>
+      <h1>Welcome to my online portfolio!</h1>
       <ul>
         <li><span>Hello!</span></li>
         <li><span>My name is <i>David Burchakov</i></span></li>

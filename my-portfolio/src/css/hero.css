@@ -85,12 +85,10 @@
   }
 
 
-
-
 /* ----------------------------------------- Responsive ----------------------------------------- */
 @media (max-width: 500px) {
   .hero{
-    min-height: 300vh;
+    min-height: 170vh;
     margin: 0;
     padding: 0;
   }
