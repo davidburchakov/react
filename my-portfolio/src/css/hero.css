@@ -90,7 +90,7 @@
 /* ----------------------------------------- Responsive ----------------------------------------- */
 @media (max-width: 500px) {
   .hero{
-    min-height: 200vh;
+    min-height: 300vh;
     margin: 0;
     padding: 0;
   }
@@ -118,15 +118,15 @@
   
   
   .avatar-container{
-    position:absolute;
+    position:relative;
     width: 15rem;
-    height: 10rem;
+    height: 12rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     top: 15rem;
-    left: 25%;
+    left: 0%;
     z-index: 100;
   }
   
