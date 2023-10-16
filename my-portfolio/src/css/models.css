@@ -37,3 +37,40 @@
   left: 10vw;
   top: 0vh;
 }
+
+
+/* ----------------------------------------- Responsive ----------------------------------------- */
+@media (max-width: 500px) {
+    .view {
+      margin: 0.2em;
+      width: 40vw;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      }
+    
+    .scale{
+      /* height: 30vh; */
+      position: relative;
+    }
+    
+    .journal{
+      left:0vw;
+      top: 30vh;
+    }
+    
+    .penguine{
+      left: 0vw;
+      top: 30vh;
+    }
+    
+    .duck{
+      left: 0vw;
+      top: 30vh;
+    }
+    
+    .fox{
+      left: 0vw;
+      top: 30vh;
+    }
+}

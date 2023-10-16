@@ -34,7 +34,7 @@ export default function Models() {
         </View>
 
         <View track={book2}>
-          <Common color={""}/>
+          <Common color={"red"}/>
           <PivotControls lineWidth={3} depthTest={false} displayValues={false} scale={2}>
             <Duck scale={1} rotation={[-2*Math.PI, -1*Math.PI/2, 0]} position={[0, 0, 0]}/>
           </PivotControls>
@@ -43,14 +43,14 @@ export default function Models() {
         </View>
 
         <View track={book3}>
-          <Common color={""}/>
+          <Common color={"blue"}/>
           <Fox scale={.03} rotation={[-2*Math.PI, 0.4*Math.PI/2, 0]} position={[0, -1, 0]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
         <View track={book4}>
-          <Common color={""}/>
+          <Common color={"green"}/>
           <Penguine scale={.12} rotation={[-2*Math.PI, 1*Math.PI/4, 0]} position={[0, -1, 0]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
