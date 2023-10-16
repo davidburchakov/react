@@ -1,7 +1,7 @@
-import { useGLTF } from '@react-three/drei';
-import { Html } from '@react-three/drei';
+import { useGLTF, Html } from '@react-three/drei';
 
-export default function Laptop(){
+
+export default function Laptop(params){
             // load locally
             // const computer = useGLTF(process.env.PUBLIC_URL + '/mac-compressed.glb');
             // load remotely
@@ -9,7 +9,11 @@ export default function Laptop(){
             // console.log(computer);
             const { nodes, materials } = useGLTF(process.env.PUBLIC_URL + '/mac-compressed.glb');
 
-        return <group position={[0.1, -0.7, 0.3]} scale={1.05}>
+
+        return <group position={[0.1, -0.7, 0.3]} 
+            // scale={1.05}
+            scale={params.scale}
+            >
             <Html 
                         transform 
                         wrapperClass='htmlScreen' 
