@@ -4,6 +4,7 @@ import { PresentationControls, Text, Float } from '@react-three/drei';
 import { ContactShadows } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
 import Laptop from 'components/Laptop.jsx'
+import { useThree } from '@react-three/fiber'
 
 extend({Text});
 export default function Contact(){
@@ -13,6 +14,31 @@ export default function Contact(){
         // Rotate the laptop
         // groupRef.current.rotation.y += delta
     })
+
+    const { viewport } = useThree()
+    // Default scale
+    let scale = 1.05; 
+    let textScale = 1;
+    let textPosition = [2.5, 0.75, 1];
+    let textRotation = -1.25;
+
+    if (viewport.width <= 3) {
+      // smaller viewports
+      scale = .5;
+      textScale = .25;
+      textPosition = [0, .8, 0];
+      textRotation = -.1;
+    }
+    else if (viewport.width <= 4) {
+      // smaller viewports
+      scale = .7;
+    } else if (viewport.width <= 8) {
+      // medium-sized viewports
+      scale = 1;
+    } else {
+      // larger viewports
+      scale = 1.1;
+    }
 
     return <>
             {/* Change color of the parent div */}
@@ -50,7 +76,7 @@ export default function Contact(){
                   />
                   {/* Laptop Primitive */}
                   <Suspense fallback={<Loading />}>
-                    <Laptop/>
+                    <Laptop scale={scale}/>
                   </Suspense>
               </Float>
 
@@ -61,9 +87,9 @@ export default function Contact(){
                 >
                 <Text 
                       font={process.env.PUBLIC_URL +"/bangers.woff"}
-                      fontSize={1}
-                      position={[2.5, 0.75, 1]}
-                      rotation-y={-1.25}
+                      fontSize={textScale}
+                      position={(textPosition)}
+                      rotation-y={textRotation}
                       maxWidth={2}
                       textAlign='center'
                       >

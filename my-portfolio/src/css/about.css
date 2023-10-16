@@ -17,8 +17,9 @@
     top: 0%;
     width: 100%;
     text-align: center;
-    font-size: 5rem;
+    font-size: 5vw;
     letter-spacing: 2px;
+    color: antiquewhite;
 }
 
 .about ul{
@@ -41,7 +42,7 @@
 .about ul li span{
     display: block;
     line-height: 4rem;
-    font-size: 2rem;
+    font-size: 2vw;
     font-weight: lighter;
     margin: 0.05rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -78,4 +79,36 @@
 
 .gap{
     width: 1rem;
+}
+
+
+/* ----------------------------------------- Responsive ----------------------------------------- */
+@media (max-width: 500px) {
+  .about{
+    padding: 0px;
+    margin: 0px;
+    position:relative;
+    height: 250vh;
+  }
+  .about h1{
+    font-size: 1.75rem;
+  }
+  
+  .about ul{
+    position: relative;
+    height: 220vh;
+    top: 0rem;
+  }
+  .about ul li{
+    min-height: 8rem;
+    display: flex;
+    overflow: hidden;
+    margin: 0rem;
+    justify-content: center;
+}
+  .about ul li span{
+    display: block;
+    line-height: 2rem;
+    font-size: 5vw;
+  }
 }

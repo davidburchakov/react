@@ -31,9 +31,9 @@
     width: 20vw;
     height: 35vh;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
     top: 30%;
     left: 63%;
     z-index: 100;
@@ -55,7 +55,7 @@
     object-fit: cover;
   }
   
-  /* --------------------- Animated Avatar Splash  --------------------- */
+  /* --------------------- Animated Avatar Splash - not used  --------------------- */
   
   .animated-avatar-container{
     position: absolute;
@@ -83,3 +83,65 @@
     height: 500px;
     object-fit: cover;
   }
+
+
+/* ----------------------------------------- Responsive ----------------------------------------- */
+@media (max-width: 500px) {
+  .hero{
+    min-height: 170vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title-container{
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+  }
+  .hero p{
+    font-size: .9rem;
+    font-weight: 300;
+    color: #ffffff;
+    padding-top: 10px;
+  }
+
+  .hero .title{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  /* --------------------- Static Avatar Splash  --------------------- */
+  
+  
+  .avatar-container{
+    position:relative;
+    width: 15rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 15rem;
+    left: 0%;
+    z-index: 100;
+  }
+  
+  .avatar-container img{
+    width: 100%;
+    height: 100%;
+    background-repeat: none;
+    -webkit-mask-image: url('../static/img/mask.png'); 
+    mask-image: url('../static/img/mask.png');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 95%;
+    mask-size: 95%;
+    -webkit-mask-position: 2vh -5vh;
+    mask-position: 2vh -5vh;
+    
+    object-fit: cover;
+  }
+  
+}

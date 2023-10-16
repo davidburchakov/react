@@ -1,4 +1,5 @@
 import 'css/hero.css';
+import 'css/responsive.css';
 import reading from 'static/img/reading-book.png';
 import Models from 'components/Models.jsx';
 import React, { useEffect } from 'react';

@@ -6,52 +6,57 @@ import Journal from 'components/Journal.jsx'
 import Duck from 'components/Duck.jsx'
 import Fox from 'components/Fox.jsx'
 import Penguine from 'components/Penguine.jsx'
+import { Group } from 'three';
 
+// extend({ Group });
 export default function Models() {
   const ref = useRef(null)
-  const book1 = useRef(null)
-  const book2 = useRef(null)
-  const book3 = useRef(null)
-  const book4 = useRef(null)
+  const model1 = useRef(null)
+  const model2 = useRef(null)
+  const model3 = useRef(null)
+  const model4 = useRef(null)
+  const groupRef = useRef();
 
   
   return (
     <div ref={ref} className="container">
       <div className="text">
-        <div ref={book1} className="view scale journal"  />
-        <div ref={book2} className="view scale duck"  />
-        <div ref={book3} className="view scale fox"  />
-        <div ref={book4} className="view scale penguine"  />
+        <div ref={model1} className="view scale journal"  />
+        <div ref={model2} className="view scale duck"  />
+        <div ref={model3} className="view scale fox"  />
+        <div ref={model4} className="view scale penguine"  />
       </div>
         
       <Canvas eventSource={ref} className="canvas" dpr={ [1, 1.5] } >
 
-        <View track={book1}>
+        <View track={model1}>
           <ambientLight intensity={1} />
           <Journal scale={1} rotation={[Math.PI/2, 0, 0]} position={[0, 0, 0]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
-        <View track={book2}>
+        <View track={model2}>
           <Common color={""}/>
-          <PivotControls lineWidth={3} depthTest={false} displayValues={false} scale={2}>
+          <group ref={groupRef} position={[0, -1, 0]}>
+          <PivotControls lineWidth={3} depthTest={false} displayValues={false} scale={1}>
             <Duck scale={1} rotation={[-2*Math.PI, -1*Math.PI/2, 0]} position={[0, 0, 0]}/>
           </PivotControls>
+          </group>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
-        <View track={book3}>
+        <View track={model3}>
           <Common color={""}/>
-          <Fox scale={.03} rotation={[-2*Math.PI, 0.4*Math.PI/2, 0]} position={[0, -1, 0]}/>
+          <Fox scale={.03} rotation={[-2*Math.PI, 0.4*Math.PI/2, 0]} position={[0, -1.5, 0]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
-        <View track={book4}>
+        <View track={model4}>
           <Common color={""}/>
-          <Penguine scale={.12} rotation={[-2*Math.PI, 1*Math.PI/4, 0]} position={[0, -1, 0]}/>
+          <Penguine scale={.12} rotation={[-2*Math.PI, 1*Math.PI/4, 0]} position={[0, -1.5, 0]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>

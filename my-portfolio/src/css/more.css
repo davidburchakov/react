@@ -42,3 +42,8 @@ section h1 {
   text-transform: uppercase;
   z-index: 100;
 }
+
+/* ----------------------------------------- Responsive ----------------------------------------- */
+@media (max-width: 500px) {
+
+}

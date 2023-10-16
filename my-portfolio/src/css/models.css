@@ -19,7 +19,7 @@
 }
 
 .journal{
-  left:65vw;
+  left:60vw;
   top: 25vh;
 }
 
@@ -29,11 +29,55 @@
 }
 
 .duck{
-  left: 15vw;
+  width: 7vw;
+  height: 25vh;
+  left: 17vw;
   top: 25vh;
 }
 
 .fox{
   left: 10vw;
   top: 0vh;
+}
+
+
+/* ----------------------------------------- Responsive ----------------------------------------- */
+@media (max-width: 500px) {
+    .view {
+      margin: 0.2em;
+      width: 40vw;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      }
+    
+    .scale{
+      /* height: 30vh; */
+      position: relative;
+    }
+    
+    .journal{
+      height: 30vh;
+      left:0vw;
+      top: 30vh;
+    }
+    
+    .duck{
+      height: 25vh;
+      left: 0vw;
+      top: 30vh;
+    }   
+    
+    .fox{
+      height: 25vh;
+      left: 0vw;
+      top: 30vh;
+    }
+
+    .penguine{
+      height: 30vh;
+      left: 0vw;
+      top: 30vh;
+    }
+
 }
