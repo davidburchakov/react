@@ -6,13 +6,16 @@ import Journal from 'components/Journal.jsx'
 import Duck from 'components/Duck.jsx'
 import Fox from 'components/Fox.jsx'
 import Penguine from 'components/Penguine.jsx'
+import { Group } from 'three';
 
+// extend({ Group });
 export default function Models() {
   const ref = useRef(null)
   const model1 = useRef(null)
   const model2 = useRef(null)
   const model3 = useRef(null)
   const model4 = useRef(null)
+  const groupRef = useRef();
 
   
   return (
@@ -34,24 +37,26 @@ export default function Models() {
         </View>
 
         <View track={model2}>
-          <Common color={"red"}/>
-          <PivotControls lineWidth={3} depthTest={false} displayValues={false} scale={2}>
+          <Common color={""}/>
+          <group ref={groupRef} position={[0, -1, 0]}>
+          <PivotControls lineWidth={3} depthTest={false} displayValues={false} scale={1}>
             <Duck scale={1} rotation={[-2*Math.PI, -1*Math.PI/2, 0]} position={[0, 0, 0]}/>
           </PivotControls>
+          </group>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
         <View track={model3}>
-          <Common color={"blue"}/>
-          <Fox scale={.03} rotation={[-2*Math.PI, 0.4*Math.PI/2, 0]} position={[0, -1, 0]}/>
+          <Common color={""}/>
+          <Fox scale={.03} rotation={[-2*Math.PI, 0.4*Math.PI/2, 0]} position={[0, -1.5, 0]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>
 
         <View track={model4}>
-          <Common color={"green"}/>
-          <Penguine scale={.12} rotation={[-2*Math.PI, 1*Math.PI/4, 0]} position={[0, -1, 0]}/>
+          <Common color={""}/>
+          <Penguine scale={.12} rotation={[-2*Math.PI, 1*Math.PI/4, 0]} position={[0, -1.5, 0]}/>
           <OrbitControls makeDefault/>
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
         </View>

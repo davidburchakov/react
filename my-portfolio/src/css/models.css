@@ -19,7 +19,7 @@
 }
 
 .journal{
-  left:65vw;
+  left:60vw;
   top: 25vh;
 }
 
@@ -29,7 +29,9 @@
 }
 
 .duck{
-  left: 15vw;
+  width: 7vw;
+  height: 25vh;
+  left: 17vw;
   top: 25vh;
 }
 
@@ -55,22 +57,27 @@
     }
     
     .journal{
+      height: 30vh;
       left:0vw;
       top: 30vh;
     }
     
-    .penguine{
-      left: 0vw;
-      top: 30vh;
-    }
-    
     .duck{
+      height: 25vh;
       left: 0vw;
       top: 30vh;
-    }
+    }   
     
     .fox{
+      height: 25vh;
       left: 0vw;
       top: 30vh;
     }
+
+    .penguine{
+      height: 30vh;
+      left: 0vw;
+      top: 30vh;
+    }
+
 }

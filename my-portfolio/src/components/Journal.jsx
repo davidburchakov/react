@@ -1,11 +1,10 @@
-import { useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useThree } from '@react-three/fiber'
 
 export default function Journal(props) {
     const journal = useGLTF(process.env.PUBLIC_URL + '/journal-full.glb')
     const journalAnimations = useAnimations(journal.animations, journal.scene)
-    console.log(journalAnimations.names)
-    
+    const { viewport } = useThree()
 
     const handleClick = () => {
         const action = journalAnimations.actions.Animation;
@@ -16,7 +15,8 @@ export default function Journal(props) {
       };
 
     return  <primitive object={journal.scene} 
-            scale={props.scale}
+            // scale={props.scale}
+            scale={(viewport.width / 5) }
             rotation={props.rotation}
             position={props.position}
 
