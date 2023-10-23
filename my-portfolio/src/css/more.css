@@ -44,6 +44,8 @@ section h1 {
 }
 
 /* ----------------------------------------- Responsive ----------------------------------------- */
-@media (max-width: 500px) {
-
+@media (max-width: 1500px) {
+  .App{
+    display: none;
+  }
 }
