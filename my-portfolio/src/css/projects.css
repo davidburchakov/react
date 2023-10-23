@@ -318,9 +318,9 @@
 }
 
 /* ----------------------------------------- Responsive ----------------------------------------- */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .projects{
-        min-height: 700vh;
+        min-height: 750vh;
     }
     .pile{
         width: 90%;
