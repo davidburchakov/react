@@ -3,6 +3,7 @@ import birdPic from "static/img/bird.png";
 import supervisionPic from "static/img/supervision.png";
 import compilerPic from "static/img/compiler.png";
 import lbawPic from "static/img/lbaw.png";
+import tspPic from "static/img/TSP.png";
 import r3fPic from "static/img/r3f.png";
 import ltwPic from "static/img/ltw.png";
 import tspAiPic from "static/img/tsp-ai.png"
@@ -177,7 +178,8 @@ const ProjectsSection = () => {
             <div className="info">
               <h1 className="title-card">Computer Graphics</h1>
               <h3>
-                Computer Graphics projects using WebCGF (Web Computer Graphics @ FEUP) - a library based on WebGL developed by teachers and alumni of GIG, DEI at the Faculty of Engineering of the University of Porto to support the computer graphics courses lectured primarily in the Master in Informatics and Computing Engineering (MIEIC).
+                This is a project done as a part of Computer Graphics course at the University of Porto. 
+                It uses 'WebCGF', a WebGL library made specifically for educational purposes by teachers and alumni of GIG, DEI at the Faculty of Engineering
               </h3>
               <div className="readmore">
                 <button onClick={() => handleButtonClick('https://github.com/davidburchakov/CG-bird')}>Read More</button>
@@ -208,7 +210,6 @@ const ProjectsSection = () => {
             <div className="info">
               <h1 className="title-card">Supervision Learning</h1>
               <h3>
-                Supervision Learning project.
                 Application of different Machine Learning algorithms, including
                 Nearest Neighbor,
                 SVM,
@@ -250,6 +251,7 @@ const ProjectsSection = () => {
               <h3>
                 Java-like compiler, including 
                 Grammar using antl4, 
+                Symbol Table,
                 Semantic Analysis, 
                 OLLIR and
                 Jasmin.
@@ -286,7 +288,7 @@ const ProjectsSection = () => {
               <h1 className="title-card">Database and Web Applications Laboratory</h1>
               <h3>
                 Web project that uses technologies such as
-                Laravel,
+                Laravel Framework,
                 PostgresDB,
                 PHP,
                 JS,
@@ -323,7 +325,7 @@ const ProjectsSection = () => {
             <div className="info">
               <h1 className="title-card">Web Languages and Technologies</h1>
               <h3>
-              Web Languages and Technologies
+              Web project that uses plain html, css, php and js. No Frameworks.
               </h3>
               <div className="readmore">
                 <button onClick={() => handleButtonClick('https://github.com/FEUP-LTW-2023/project-ltw08g05')}>Read More</button>
@@ -355,7 +357,11 @@ const ProjectsSection = () => {
             <div className="info">
               <h1 className="title-card">Optimizations - Travelling Salesman Problem</h1>
               <h3>
-              Optimizations - Travelling Salesman Problem
+              The purpose of the project is to learn and apply 
+              different optimizations approaches/algorithms for 
+              the famous Travelling Salesman (SalesPerson) Problem. 
+              A dataset with 1000 establishments is given, 
+              as well as their latitude and longitude location.
               </h3>
               <div className="readmore">
                 <button onClick={() => handleButtonClick('https://github.com/davidburchakov/AI-TSP')}>Read More</button>
@@ -382,12 +388,13 @@ const ProjectsSection = () => {
                 >
             <div className="img-card">            
               <div className="circle"></div>
-              <img id="img-self-bird" src={ lbawPic } alt="bird" />
+              <img id="img-self-bird" src={ tspPic } alt="TSP" />
             </div>
             <div className="info">
               <h1 className="title-card">Optimizations - Travelling Salesman Problem</h1>
               <h3>
-              Optimizations - Travelling Salesman Problem
+              The project aims to solve infamous Travelling Salesman Problem with classic Computer Science Approaches, such as 
+              Greedy approach, Backtracking, Branch and Bound, Dynamic Programming and Heuristics.
               </h3>
               <div className="readmore">
                 <button onClick={() => handleButtonClick('https://github.com/davidburchakov/DA_TSP_Project-2')}>Read More</button>
@@ -421,7 +428,7 @@ const ProjectsSection = () => {
               <h3>
               This website is built using cheifly 
               React Framework (Library),
-              WebGL library - three.js,
+              React-Three-Fiber / Three.js,
               GreenSock (gsap),
               html, css, js and others.
               </h3>
