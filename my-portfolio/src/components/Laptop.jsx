@@ -9,21 +9,38 @@ export default function Laptop(params){
             // console.log(computer);
             const { nodes, materials } = useGLTF(process.env.PUBLIC_URL + '/mac-compressed.glb');
 
+             // Determine the user's browser
+            const isChrome = /Chrome/.test(navigator.userAgent);
+            const isFirefox = /Firefox/.test(navigator.userAgent);
+
+            // Define different positions for different browsers
+            const chromePosition = [0, 0.75, -1.35];
+            const firefoxPosition = [-0.005, 1, -1.35];
+            const defaultPosition = [-0.005, 0.7, -1.35]; // Fallback for other browsers
+
+            const chromeSize = .99;
+            const firefixSize = .97;
+            const defaultSize = 1;
+
+            const position = isChrome ? chromePosition : isFirefox ? firefoxPosition : defaultPosition;
+            const size = isChrome ? chromeSize : isFirefox ? firefixSize : defaultSize;
 
         return <group position={[0.1, -0.7, 0.3]} 
             // scale={1.05}
             scale={params.scale}
             >
             <Html 
-                        transform 
-                        wrapperClass='htmlScreen' 
-                        distanceFactor={ 1.17 }
-                        position={[-0.005, 1, -1.35]}
-                        rotation-x={ -0.275}
-                        scale={.97}
-                        >
-                        <iframe src="https://davidburchakov.github.io/" frameborder="0"/>
-                      </Html>
+              transform 
+              wrapperClass='htmlScreen' 
+              distanceFactor={ 1.17 }
+              position={position}
+              rotation-x={ -0.275}
+              scale={size}
+              >
+              <iframe src="https://davidburchakov.github.io/" frameborder="0"/>
+            </Html>
+
+
         <group name="Macbook"  scale={.1}>
             
         <mesh
