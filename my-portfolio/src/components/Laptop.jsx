@@ -1,5 +1,5 @@
 import { useGLTF, Html } from '@react-three/drei';
-
+import React, { useState, useEffect } from 'react';
 
 export default function Laptop(params){
             // load locally
@@ -9,22 +9,27 @@ export default function Laptop(params){
             // console.log(computer);
             const { nodes, materials } = useGLTF(process.env.PUBLIC_URL + '/mac-compressed.glb');
 
-             // Determine the user's browser
-            const isChrome = /Chrome/.test(navigator.userAgent);
-            const isFirefox = /Firefox/.test(navigator.userAgent);
+            const position = [0, 1, -1.35];
+            const size = 1;
+            
 
-            // Define different positions for different browsers
-            const chromePosition = [0, 1, -1.35];
-            const firefoxPosition = [-0.005, 1, -1.35];
-            const defaultPosition = [-0.005, 1, -1.35]; // Fallback for other browsers
-
-            const chromeSize = .99;
-            const firefixSize = .97;
-            const defaultSize = 1;
-
-            const position = isChrome ? chromePosition : isFirefox ? firefoxPosition : defaultPosition;
-            const size = isChrome ? chromeSize : isFirefox ? firefixSize : defaultSize;
-
+            useEffect(() => {
+              // Function to handle resize event
+              const handleResize = () => {
+                  // Since your goal is to not change the iframe's position and size on resize,
+                  // you don't need to implement any resizing logic here.
+                  // This function is kept to demonstrate where you would handle resize if needed.
+              };
+      
+              // Add event listener for resize
+              window.addEventListener('resize', handleResize);
+      
+              // Clean up event listener on component unmount
+              return () => window.removeEventListener('resize', handleResize);
+          }, []); // The empty dependency array ensures this effect runs only once on mount
+      
+      
+      
         return <group position={[0.1, -0.7, 0.3]} 
             // scale={1.05}
             scale={params.scale}
