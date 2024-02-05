@@ -22,23 +22,23 @@ export default function Contact(){
     let textPosition = [2.5, 0.75, 1];
     let textRotation = -1.25;
 
-    if (viewport.width <= 3) {
-      // smaller viewports
-      scale = .5;
-      textScale = .25;
-      textPosition = [0, .8, 0];
-      textRotation = -.1;
-    }
-    else if (viewport.width <= 4) {
-      // smaller viewports
-      scale = .7;
-    } else if (viewport.width <= 8) {
-      // medium-sized viewports
-      scale = 1;
-    } else {
-      // larger viewports
-      scale = 1.1;
-    }
+    // if (viewport.width <= 3) {
+    //   // smaller viewports
+    //   scale = .5;
+    //   textScale = .25;
+    //   textPosition = [0, .8, 0];
+    //   textRotation = -.1;
+    // }
+    // else if (viewport.width <= 4) {
+    //   // smaller viewports
+    //   scale = .7;
+    // } else if (viewport.width <= 8) {
+    //   // medium-sized viewports
+    //   scale = 1;
+    // } else {
+    //   // larger viewports
+    //   scale = 1.1;
+    // }
 
     return <>
             {/* Change color of the parent div */}
