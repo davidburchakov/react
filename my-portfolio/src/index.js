@@ -19,10 +19,11 @@ root.render(
 
         <Header />
         <Hero />
+        <Finale />
         <About />
         <Projects />
         <More />
-        <Finale />
+        
   
   </React.StrictMode>
 );

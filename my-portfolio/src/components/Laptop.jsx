@@ -14,9 +14,9 @@ export default function Laptop(params){
             const isFirefox = /Firefox/.test(navigator.userAgent);
 
             // Define different positions for different browsers
-            const chromePosition = [0, 0.75, -1.35];
+            const chromePosition = [0, 1, -1.35];
             const firefoxPosition = [-0.005, 1, -1.35];
-            const defaultPosition = [-0.005, 0.7, -1.35]; // Fallback for other browsers
+            const defaultPosition = [-0.005, 1, -1.35]; // Fallback for other browsers
 
             const chromeSize = .99;
             const firefixSize = .97;
@@ -30,6 +30,7 @@ export default function Laptop(params){
             scale={params.scale}
             >
             <Html 
+              occlide='blending'
               transform 
               wrapperClass='htmlScreen' 
               distanceFactor={ 1.17 }
@@ -37,6 +38,7 @@ export default function Laptop(params){
               rotation-x={ -0.275}
               scale={size}
               >
+                {/* width={1000} height={500} */}
               <iframe src="https://davidburchakov.github.io/" frameborder="0"/>
             </Html>
 
