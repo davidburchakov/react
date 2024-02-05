@@ -39,7 +39,7 @@ export default function Laptop(params){
               transform 
               wrapperClass='htmlScreen' 
               distanceFactor={ 1.17 }
-              position={position}
+              position={params.iframePosition}
               rotation-x={ -0.275}
               scale={size}
               >

@@ -9,6 +9,7 @@ import About from './sections/About.jsx';
 import Projects from './sections/Projects.jsx';
 import More from './sections/More.jsx';
 import Finale from './sections/Finale.jsx';
+import Footer from './sections/Footer.jsx'
 import reportWebVitals from './reportWebVitals';
 
 // JSX Tag Language
@@ -23,7 +24,7 @@ root.render(
         <About />
         <Projects />
         <More />
-        
+        <Footer />
   
   </React.StrictMode>
 );

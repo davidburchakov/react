@@ -1,6 +1,5 @@
 import 'css/header.css';
 // import 'css/responsive.css';
-import logo from 'logo.svg';
 // src/components/Header.jsx
 export default function Header(){
     return(

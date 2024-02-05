@@ -21,24 +21,15 @@ export default function Contact(){
     let textScale = 1;
     let textPosition = [2.5, 0.75, 1];
     let textRotation = -1.25;
-
-    // if (viewport.width <= 3) {
-    //   // smaller viewports
-    //   scale = .5;
-    //   textScale = .25;
-    //   textPosition = [0, .8, 0];
-    //   textRotation = -.1;
-    // }
-    // else if (viewport.width <= 4) {
-    //   // smaller viewports
-    //   scale = .7;
-    // } else if (viewport.width <= 8) {
-    //   // medium-sized viewports
-    //   scale = 1;
-    // } else {
-    //   // larger viewports
-    //   scale = 1.1;
-    // }
+    let iframePosition = [0, 1, -1.35];
+    if (viewport.width <= 3) {
+      // smaller viewports
+      iframePosition = [0, 1.2, -1.35];
+      scale=1;
+      // textScale = .25;
+      // textPosition = [0, .8, 0];
+      // textRotation = -.1;
+    }
 
     return <>
             {/* Change color of the parent div */}
@@ -76,7 +67,7 @@ export default function Contact(){
                   />
                   {/* Laptop Primitive */}
                   <Suspense fallback={<Loading />}>
-                    <Laptop scale={scale}/>
+                    <Laptop scale={scale} iframePosition={iframePosition}/>
                   </Suspense>
               </Float>
 
