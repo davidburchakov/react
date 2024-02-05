@@ -1,0 +1,26 @@
+/* footer.css */
+.site-footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: -150px;
+}
+
+.footer-logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.site-footer h1 {
+    margin: 10px 0;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 16px; 
+}
+
+img{
+    border-radius: 50%;
+}
